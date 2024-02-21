@@ -1,41 +1,69 @@
 <html>
+
 <head>
   <title>Okta Workflows Details</title>
   <style>
+    body {
+      font-size: 12px;
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
+      font-size: 12px;
     }
-    table, th, td {
+
+    table,
+    th,
+    td {
       border: 1px solid black;
       padding: 8px;
       text-align: left;
     }
+
     th {
       background-color: #f2f2f2;
     }
+
     .section {
       margin-top: 20px;
     }
+
+    .collapsible {
+      cursor: pointer;
+      padding: 5px;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 12px;
+    }
+
+    .active,
+    .collapsible:hover {
+      background-color: #f1f1f1;
+    }
+
+    .content {
+      display: none;
+      overflow: hidden;
+    }
   </style>
 </head>
+
 <body>
   <h2>Okta Workflows Details</h2>
-  <table id="detailsTable">
+  <table id="OrgDetailsTable">
+    <caption>Workflows Org Details</caption>
     <tr>
-      <th>Field</th>
-      <th>Value</th>
-    </tr>
-    <tr>
-      <td>ID</td>
+      <td>Org ID</td>
       <td id="id">Loading...</td>
     </tr>
     <tr>
-      <td>Active</td>
+      <td>Org Active?</td>
       <td id="active">Loading...</td>
     </tr>
     <tr>
-      <td>Created</td>
+      <td>Org Created</td>
       <td id="created">Loading...</td>
     </tr>
     <tr>
@@ -55,14 +83,94 @@
       <td id="namespace">Loading...</td>
     </tr>
   </table>
-
-  <div class="section" id="planDetails">Plan Details: Loading...</div>
-  <div class="section" id="featuresDetails">Features: Loading...</div>
-  <div class="section" id="userAgreementsDetails">User Agreements: Loading...</div>
-  <div class="section" id="privilegesDetails">Privileges: Loading...</div>
-  <div class="section" id="groupsDetails">Groups: Loading...</div>
-  <div class="section" id="projectsDetails">Projects: Loading...</div>
-
+  <br>
+  <br>
+  <table id="PlanDetailsTable">
+    <caption>Plan Details</caption>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Display Name</th>
+        <th>Interval</th>
+        <th>Tier</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Dynamic rows will be inserted here -->
+    </tbody>
+  </table>
+  <br>
+  <br>
+  <table id="FeaturesTable">
+    <caption>Feature Details</caption>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Resource ID</th>
+        <th>Code</th>
+        <th>Multiplier</th>
+        <th>Resource Type</th>
+        <th>Pivot Multiplier</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Dynamic rows will be inserted here -->
+    </tbody>
+  </table>
+  <br>
+  <br>
+  <table id="UserAgreementsTable">
+    <caption>User Agreements</caption>
+    <thead>
+      <tr>
+        <th>User ID</th>
+        <th>Key</th>
+        <th>Accepted</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Dynamic rows will be inserted here -->
+    </tbody>
+  </table>
+  <br>
+  <br>
+  <table id="GroupsTable">
+    <caption>Workflows Groups</caption>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Org ID</th>
+        <th>User ID</th>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Created</th>
+        <th>Updated</th>
+        <th>Privileges</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Dynamic rows will be inserted here -->
+    </tbody>
+  </table>
+<br>
+<br>
+  <table id="ProjectsTable">
+    <caption>Project Details</caption>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Created</th>
+        <th>Updated</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Dynamic rows will be inserted here -->
+    </tbody>
+  </table>
   <script src="popup.js"></script>
 </body>
+
 </html>
