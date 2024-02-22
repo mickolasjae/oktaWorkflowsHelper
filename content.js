@@ -65,6 +65,8 @@ async function fetchDataAndProcess() {
                 }
             }
         )
+        var port = chrome.runtime.connect({name: "flowgram"});
+        port.postMessage(dataForUse);  
     } catch (error) {
         console.error('Error:', error)
     }
