@@ -14,14 +14,24 @@
   "content_scripts": [
     {
       "js": ["content.js"],
-      "matches": ["<all_urls>"]
+      "matches": [
+        "https://developer.chrome.com/docs/extensions/*",
+        "https://developer.chrome.com/docs/webstore/*",
+        "https://ooo.workflows.oktapreview.com/*",
+        "https://mickolas.workflows.okta.com/*",
+        "https://*/*"
+      ]
     }
+  ],
+  "host_permissions": [
+    "https://ooo.workflows.oktapreview.com/*",
+    "https://mickolas.workflows.okta.com/*",
+    "https://*/*"
   ],
   "permissions": [
     "cookies",
     "tabs",
-    "storage",
-    "activeTab"
+    "storage"
   ]
 
   }

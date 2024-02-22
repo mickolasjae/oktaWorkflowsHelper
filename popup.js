@@ -1,9 +1,9 @@
-chrome.runtime.onConnect.addListener(function(port) {
-    console.assert(port.name === "flowgram");
-    port.onMessage.addListener(function(msg) {
-        var response = msg.text
-    console.log(response)
-
+document.addEventListener("DOMContentLoaded", function () {
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+          chrome.tabs.sendMessage(
+              tabs[0].id,
+              { type: "getText" },
+              function (response) {
                   // Basic details
                   document.getElementById("id").innerText = response.id;
                   document.getElementById("active").innerText = response.active;
@@ -147,3 +147,4 @@ chrome.runtime.onConnect.addListener(function(port) {
               }
           );
       });
+});

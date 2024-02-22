@@ -1,7 +1,3 @@
-
-
-        
-
 function extractOktaInfo(url) {
     return new Promise((resolve, reject) => {
         try {
@@ -61,46 +57,14 @@ async function fetchDataAndProcess() {
 // Using the async function in the main block
 (async () => {
     try {
-        const dataForUse = await fetchDataAndProcess(); // Corrected variable name for response
-        console.log(dataForUse)
-        var port = chrome.runtime.connect({name: "flowgram"});
-        port.postMessage(dataForUse);
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-            switch (message.type) {
-                case "getText":
-                    sendResponse(dataForUse); // Assuming 'dataForUse' is defined and holds the data you want to send back
-                    break;
-                case "updateSettings":
-                    // Handle the "updateSettings" message type
-                    // Example action: Update some settings and send a confirmation response
-                    //updateSettings(message.settings); // Assuming you have an updateSettings function and 'settings' is part of the message
-                    sendResponse(dataForUse);
-                    break;
-                // Add more case statements for other message types as needed
-                default:
-                    console.log("Unknown message type received");
+        const dataForUse = await fetchDataAndProcess(); // Corrected variable name for response        
+        chrome.runtime.onMessage.addListener(
+            function (message, sender, sendResponse) {
+                if (message.type === "getText") { // Changed 'switch' to 'if' for simplicity
+                    sendResponse(dataForUse)
+                }
             }
-            return true; // Keep the message channel open for asynchronous response
-        });
+        )
     } catch (error) {
         console.error('Error:', error)
     }
