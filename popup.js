@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
       tabs[0].id,
       { type: "getText" },
       function (response) {
-        
         // Basic details
         document.getElementById("id").innerText = response.id;
         document.getElementById("active").innerText = response.active;
@@ -145,24 +144,112 @@ document.addEventListener("DOMContentLoaded", function () {
           addCell(project.updated);
           projectsTableBody.appendChild(row);
         });
-        
-        response.flows.forEach((flow) => {
-            console.log(flow)
-            // const row = document.createElement("tr");
-            // const addCell = (text) => {
-            //   const cell = document.createElement("td");
-            //   cell.textContent = text;
-            //   row.appendChild(cell);
-            // };
-            // addCell(project.id);
-            // addCell(project.name);
-            // addCell(project.created);
-            // addCell(project.updated);
-            // projectsTableBody.appendChild(row);
-          });
 
+        // Populate Flows Table
+        // Function to create a collapsible content block
+function createCollapsibleContent(data) {
+    const wrapper = document.createElement('div');
+    wrapper.style.display = 'none'; // Start hidden
+    const content = document.createElement('pre'); // Use pre for formatted text, or customize as needed
+    content.textContent = JSON.stringify(data, null, 2);
+    wrapper.appendChild(content);
+    
+    // Toggle display on click
+    wrapper.addEventListener('click', () => {
+      wrapper.style.display = wrapper.style.display === 'none' ? '' : 'none';
+    });
+    
+    return wrapper;
+  }
+  
+  // Populate Flows Table with dynamic data handling
+  const flowsTableBody = document.getElementById("FlowsTable").getElementsByTagName("tbody")[0];
+  flowsTableBody.innerHTML = ""; // Clear existing rows
+  
+  response.flows.forEach((flow) => {
+    const row = document.createElement("tr");
+    
+    // Function to add cell to the row
+    const addCell = (content) => {
+      const cell = document.createElement("td");
+      if (typeof content === 'object') { // If content is an object, make it collapsible
+        const collapsibleContent = createCollapsibleContent(content);
+        cell.appendChild(collapsibleContent);
+        cell.addEventListener('click', () => collapsibleContent.style.display = '');
+      } else {
+        cell.textContent = content;
+      }
+      row.appendChild(cell);
+    };
+    
+    // Add cells for simple keys
+    addCell(flow.id);
+    addCell(flow.org_id);
+    addCell(flow.group_id);
+    addCell(flow.user_id);
+    addCell(flow.name);
+    addCell(flow.uuid);
+    addCell(flow.description);
+    addCell(flow.client_token);
+    
+    // Handle complex keys
+    // For display key
+    if (flow.display) {
+      addCell({preview: flow.display.preview.map(p => ({module: p.module, name: p.name, kernel: p.kernel})), eventConnectorName: flow.display.eventConnectorName, isCallable: flow.display.isCallable});
+    } else {
+      addCell('None');
+    }
+    
+    // For oAuth2Apps
+    if (flow.oAuth2Apps && flow.oAuth2Apps.length > 0) {
+      addCell(flow.oAuth2Apps);
+    } else {
+      addCell('None');
+    }
+    
+    // For privileges
+    if (flow.privileges && flow.privileges.length > 0) {
+      addCell(flow.privileges.map(p => ({resource: p.resource, privilege: p.privilege})));
+    } else {
+      addCell('None');
+    }
+    
+    flowsTableBody.appendChild(row);
+  });
 
+        const tables = [
+          { id: "OrgDetailsTable", label: "Org Details" },
+          { id: "PlanDetailsTable", label: "Plan Details" },
+          { id: "FeaturesTable", label: "Features" },
+          { id: "UserAgreementsTable", label: "User Agreements" },
+          { id: "GroupsTable", label: "Groups" },
+          { id: "ProjectsTable", label: "Projects" },
+          { id: "FlowsTable", label: "Flows"}
+        ];
 
+        // Loop through each table and create a button to toggle visibility
+        tables.forEach(function (table) {
+          var button = document.createElement("button");
+          button.innerText = `Show ${table.label}`;
+          button.className = "collapsible-button"; // Assign a class for styling if necessary
+          var content = document.getElementById(table.id); // Get the table element
+
+          if (content) {
+            content.before(button); // Insert the button right before the table
+            content.style.display = "none"; // Start with the table hidden
+
+            // Add click event listener to the button to toggle the table visibility
+            button.addEventListener("click", function () {
+              if (content.style.display === "none") {
+                content.style.display = ""; // Show the table
+                button.innerText = `Hide ${table.label}`;
+              } else {
+                content.style.display = "none"; // Hide the table
+                button.innerText = `Show ${table.label}`;
+              }
+            });
+          }
+        });
       }
     );
   });
