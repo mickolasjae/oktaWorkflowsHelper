@@ -1,0 +1,2086 @@
+[
+    {
+        "display": {
+            "name": "accessCertificationDecisionSubmitted",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Access Certification Decision Submitted",
+            "description": "Starts flow when a decision on the access to a resource is submitted in Okta.(certification.campaign.item.decide)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "accessCertificationDecisionSubmitted",
+        "id": 118375
+    },
+    {
+        "display": {
+            "name": "applicationCreated",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Application Created",
+            "description": "Starts flow when an application is created in Okta.(application.lifecycle.create)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "applicationCreated",
+        "id": 118381
+    },
+    {
+        "display": {
+            "name": "importProcessCompleted",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Import Process Completed",
+            "description": "Starts flow when an import process is complete in Okta.(system.import.complete)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "importProcessCompleted",
+        "id": 118403
+    },
+    {
+        "display": {
+            "name": "phoneVerificationSMSSent",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Phone Verification SMS Sent",
+            "description": "Starts flow when a user logs in and a verification SMS message is sent in Okta.(system.sms.send_phone_verification_message)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "phoneVerificationSMSSent",
+        "id": 118410
+    },
+    {
+        "display": {
+            "name": "policyDeactivated",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Policy Deactivated",
+            "description": "Starts flow when a policy is deactivated in Okta.(policy.lifecycle.deactivate)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "policyDeactivated",
+        "id": 118412
+    },
+    {
+        "display": {
+            "name": "userAccountLocked",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "User Account Locked",
+            "description": "Starts flow when a user account auto-locked in Okta.(user.account.lock)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "userAccountLocked",
+        "id": 118421
+    },
+    {
+        "display": {
+            "name": "userMFAFactorDeactivated",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "User MFA Factor Deactivated",
+            "description": "Starts flow when a user deactivates a MFA factor in Okta.(user.mfa.factor.deactivate)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "userMFAFactorDeactivated",
+        "id": 118432
+    },
+    {
+        "display": {
+            "name": "userMFAFactorSuspended",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "User MFA Factor Suspended",
+            "description": "Starts flow when a user suspends an MFA factor in Okta.(user.mfa.factor.suspend)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "userMFAFactorSuspended",
+        "id": 118434
+    },
+    {
+        "display": {
+            "name": "userMFAFactorUnsuspended",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "User MFA Factor Unsuspended",
+            "description": "Starts flow when a user unsuspends an MFA factor in Okta.(user.mfa.factor.unsuspend)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "userMFAFactorUnsuspended",
+        "id": 118435
+    },
+    {
+        "display": {
+            "name": "userPrivilegeGranted",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "User Privilege Granted",
+            "description": "Starts flow when a user admin privilege is granted in Okta.(user.account.privilege.grant)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "userPrivilegeGranted",
+        "id": 118440
+    },
+    {
+        "display": {
+            "name": "assignGroupToApplication",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Assign Group to Application",
+            "description": "Assigns a group to an application in Okta.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"application\":{\"type\":\"option\",\"displayname\":\"Application\",\"lookup\":{\"channel\":\"Okta\",\"operation\":\"getAllActiveApplications\",\"key\":\"label\",\"value\":\"id\"}}}]"
+        },
+        "name": "assignGroupToApplication",
+        "id": 118453
+    },
+    {
+        "display": {
+            "name": "accessRequestCreated",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Access Request Created",
+            "description": "Starts flow when an access request is created in Okta. (access.request.create)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "accessRequestCreated",
+        "id": 118376
+    },
+    {
+        "display": {
+            "name": "apiTokenCreated",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "API Token Created",
+            "description": "Starts flow when an API token is created in Okta.(system.api_token.create)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "apiTokenCreated",
+        "id": 118378
+    },
+    {
+        "display": {
+            "name": "applicationUpdated",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Application Updated",
+            "description": "Starts flow when an application is updated in Okta.(application.lifecycle.update)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "applicationUpdated",
+        "id": 118384
+    },
+    {
+        "display": {
+            "name": "accessRequestResolved",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Access Request Resolved",
+            "description": "Starts flow when an access request is resolved in Okta. (access.request.resolve)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "accessRequestResolved",
+        "id": 118377
+    },
+    {
+        "display": {
+            "name": "deviceSuspended",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Device Suspended",
+            "description": "Trigger a flow when a device is suspended for Okta Verify. (device.lifecycle.suspend)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "deviceSuspended",
+        "id": 118393
+    },
+    {
+        "display": {
+            "name": "deviceUnsuspended",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Device Unsuspended",
+            "description": "Trigger a flow when a device is unsuspended for Okta Verify. (device.lifecycle.unsuspend)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "deviceUnsuspended",
+        "id": 118394
+    },
+    {
+        "display": {
+            "name": "groupDeleted",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Group Deleted",
+            "description": "Starts flow when a group is deleted in Okta.(group.lifecycle.delete)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "groupDeleted",
+        "id": 118396
+    },
+    {
+        "display": {
+            "name": "groupProfileUpdated",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Group Profile Updated",
+            "description": "Starts flow when a group profile is updated in Okta.(group.profile.update)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "groupProfileUpdated",
+        "id": 118399
+    },
+    {
+        "display": {
+            "name": "policyRuleAdded",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Policy Rule Added",
+            "description": "Starts flow when a policy rule is added in Okta.(policy.rule.add)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "policyRuleAdded",
+        "id": 118414
+    },
+    {
+        "display": {
+            "name": "policyRuleDeactivated",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Policy Rule Deactivated",
+            "description": "Starts flow when a policy rule is deactivated in Okta.(policy.rule.deactivate)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "policyRuleDeactivated",
+        "id": 118415
+    },
+    {
+        "display": {
+            "name": "policyUpdated",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Policy Updated",
+            "description": "Starts flow when a policy is updated in Okta.(policy.lifecycle.update)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "policyUpdated",
+        "id": 118418
+    },
+    {
+        "display": {
+            "name": "apiTokenRevoked",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "API Token Revoked",
+            "description": "Starts flow when an API token is revoked in Okta.(system.api_token.revoke)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "apiTokenRevoked",
+        "id": 118379
+    },
+    {
+        "display": {
+            "name": "authenticatorDeactivated",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Authenticator Deactivated",
+            "description": "Starts flow when an authenticator is deactivated in Okta.(security.authenticator.lifecycle.deactivate)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "authenticatorDeactivated",
+        "id": 118386
+    },
+    {
+        "display": {
+            "name": "importGroupCreated",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Import Group Created",
+            "description": "Starts flow when a group is created by an import process in Okta.(system.import.group.create)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "importGroupCreated",
+        "id": 118401
+    },
+    {
+        "display": {
+            "name": "applicationActivated",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Application Activated",
+            "description": "Starts flow when an application is activated in Okta.(application.lifecycle.activate)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "applicationActivated",
+        "id": 118380
+    },
+    {
+        "display": {
+            "name": "applicationDeactivated",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Application Deactivated",
+            "description": "Starts flow when an application is deactivated in Okta.(application.lifecycle.deactivate)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "applicationDeactivated",
+        "id": 118382
+    },
+    {
+        "display": {
+            "name": "groupCreated",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Group Created",
+            "description": "Starts flow when a group is created in Okta.(group.lifecycle.create)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "groupCreated",
+        "id": 118395
+    },
+    {
+        "display": {
+            "name": "readUser",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Read User",
+            "description": "Retrieve Okta user information using a User ID or User Login.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[]"
+        },
+        "name": "readUser",
+        "id": 118491
+    },
+    {
+        "display": {
+            "name": "updateGroupRule",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Update Group Rule",
+            "description": "Updates a Group rule.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[]"
+        },
+        "name": "updateGroupRule",
+        "id": 118507
+    },
+    {
+        "display": {
+            "name": "applicationDeleted",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Application Deleted",
+            "description": "Starts flow when an application is deleted in Okta.(application.lifecycle.delete)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "applicationDeleted",
+        "id": 118383
+    },
+    {
+        "display": {
+            "name": "deviceActivated",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Device Activated",
+            "description": "Trigger a flow when a device is activated for Okta Verify. (device.lifecycle.activate)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "deviceActivated",
+        "id": 118387
+    },
+    {
+        "display": {
+            "name": "deactivateGroupRule",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Deactivate Group Rule",
+            "description": "Deactivates a specific Group rule by ID from your organization.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[]"
+        },
+        "name": "deactivateGroupRule",
+        "id": 118464
+    },
+    {
+        "display": {
+            "name": "getUsersGroups",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Get Users Groups",
+            "description": "Retrieve an Okta user's groups by user ID.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"resultSet\":{\"type\":\"option\",\"displayname\":\"Result Set\",\"choices\":[\"First 200 Records\",\"Stream Records\"]}}]"
+        },
+        "name": "getUsersGroups",
+        "id": 118476
+    },
+    {
+        "display": {
+            "name": "authenticatorActivated",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Authenticator Activated",
+            "description": "Starts flow when an authenticator is activated in Okta.(security.authenticator.lifecycle.activate)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "authenticatorActivated",
+        "id": 118385
+    },
+    {
+        "display": {
+            "name": "importGroupDeleted",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Import Group Deleted",
+            "description": "Starts flow when a group is deleted by an import process in Okta.(system.import.group.delete)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "importGroupDeleted",
+        "id": 118402
+    },
+    {
+        "display": {
+            "name": "importRoadblock",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Import Roadblock",
+            "description": "Starts flow when app unassignments exceeds the specified theshold safeguard during user import in Okta.(system.import.roadblock)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "importRoadblock",
+        "id": 118404
+    },
+    {
+        "display": {
+            "name": "userAccountUnlocked",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "User Account Unlocked",
+            "description": "Starts flow when a user account auto-unlocked in Okta.(user.account.unlock)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "userAccountUnlocked",
+        "id": 118422
+    },
+    {
+        "display": {
+            "name": "deviceAddedToUser",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Device Added to User",
+            "description": "Trigger a flow when a device is added to user for Okta Verify. (device.user.add)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "deviceAddedToUser",
+        "id": 118388
+    },
+    {
+        "display": {
+            "name": "deviceDeactivated",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Device Deactivated",
+            "description": "Trigger a flow when a device is deactivated for Okta Verify. (device.lifecycle.deactivate)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "deviceDeactivated",
+        "id": 118389
+    },
+    {
+        "display": {
+            "name": "userActivated",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "User Activated",
+            "description": "Starts flow when a user is activated in Okta.(user.lifecycle.activate)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "userActivated",
+        "id": 118423
+    },
+    {
+        "display": {
+            "name": "userMFA",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "User MFA",
+            "description": "Starts flow when a user authenticates via MFA in Okta.(user.authentication.auth_via_mfa)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "userMFA",
+        "id": 118430
+    },
+    {
+        "display": {
+            "name": "oktaUserProfileUpdated",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "User Okta Profile Updated",
+            "description": "Starts flow when a user updates their Okta profile.(user.account.update_profile)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "oktaUserProfileUpdated",
+        "id": 118438
+    },
+    {
+        "display": {
+            "name": "userPasswordImported",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "User Password Imported",
+            "description": "Starts flow when a user attempts to import their password into Okta.(user.import.password)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "userPasswordImported",
+        "id": 118439
+    },
+    {
+        "display": {
+            "name": "listUsersWithFilter",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "List Users with Filter",
+            "description": "Lists users in Okta based on the provided filter.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"resultSet\":{\"type\":\"option\",\"displayname\":\"Result Set\",\"choices\":[\"First Matching Record\",\"First 200 Matching Records\",\"Stream Matching Records\"]}}]"
+        },
+        "name": "listUsersWithFilter",
+        "id": 118483
+    },
+    {
+        "display": {
+            "name": "listUsersWithSearch",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "List Users with Search",
+            "description": "Searches for users in Okta based on the properties specified in the search parameter.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"resultSet\":{\"type\":\"option\",\"displayname\":\"Result Set\",\"choices\":[\"First Matching Record\",\"First 200 Matching Records\",\"Stream Matching Records\"]}}]"
+        },
+        "name": "listUsersWithSearch",
+        "id": 118484
+    },
+    {
+        "display": {
+            "name": "searchApplications",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Search Applications",
+            "description": "Search for apps based on app Name or Label in Okta.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"resultSet\":{\"type\":\"option\",\"displayname\":\"Result Set\",\"choices\":[\"First Matching Record\",\"First 200 Matching Records\",\"Stream Matching Records\"]}}]"
+        },
+        "name": "searchApplications",
+        "id": 118496
+    },
+    {
+        "display": {
+            "name": "updateUser",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Update User",
+            "description": "Update an Okta user's profile and/or credentials.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"updateSemantics\":{\"type\":\"option\",\"displayname\":\"Update Semantics\",\"choices\":[{\"displayName\":\"Partial\",\"optionValue\":\"POST\"},{\"displayName\":\"Strict\",\"optionValue\":\"PUT\"}]}}]"
+        },
+        "name": "updateUser",
+        "id": 118508
+    },
+    {
+        "display": {
+            "name": "deviceDeleted",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Device Deleted",
+            "description": "Trigger a flow when a device is deleted from Okta Verify. (device.lifecycle.delete)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "deviceDeleted",
+        "id": 118390
+    },
+    {
+        "display": {
+            "name": "orgRateLimitViolation",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Org Rate Limit Violation",
+            "description": "Starts flow when an org-wide rate limit is exceeded in Okta.(system.org.rate_limit.violation)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "orgRateLimitViolation",
+        "id": 118407
+    },
+    {
+        "display": {
+            "name": "orgRateLimitWarning",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Org Rate Limit Warning",
+            "description": "Starts flow when an org-wide rate limit ceiling is approaching in Okta.(system.org.rate_limit.warning)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "orgRateLimitWarning",
+        "id": 118408
+    },
+    {
+        "display": {
+            "name": "listUsersAssignedToApplication",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "List Users Assigned to Application",
+            "description": "Enumerates all assigned application users for an application in Okta.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"resultSet\":{\"type\":\"option\",\"displayname\":\"Result Set\",\"choices\":[\"First 500 Records\",\"Stream Records\"]}},{\"application\":{\"type\":\"option\",\"displayname\":\"Application\",\"lookup\":{\"channel\":\"Okta\",\"operation\":\"getAllActiveApplications\",\"key\":\"label\",\"value\":\"id\"}}}]"
+        },
+        "name": "listUsersAssignedToApplication",
+        "id": 118482
+    },
+    {
+        "display": {
+            "name": "removeUserFromApplication",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Remove User from Application",
+            "description": "Removes an assignment for a user from an application in Okta.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"application\":{\"type\":\"option\",\"displayname\":\"Application\",\"lookup\":{\"channel\":\"Okta\",\"operation\":\"getAllActiveApplications\",\"key\":\"label\",\"value\":\"id\"}}}]"
+        },
+        "name": "removeUserFromApplication",
+        "id": 118493
+    },
+    {
+        "display": {
+            "name": "deviceEnrolled",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Device Enrolled",
+            "description": "Trigger a flow when a new device is enrolled successfully for Okta Verify. (device.enrollment.create)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "deviceEnrolled",
+        "id": 118391
+    },
+    {
+        "display": {
+            "name": "deviceRemovedFromUser",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Device Removed from User",
+            "description": "Trigger a flow when a device is removed from user for Okta Verify. (device.user.remove)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "deviceRemovedFromUser",
+        "id": 118392
+    },
+    {
+        "display": {
+            "name": "policyActivated",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Policy Activated",
+            "description": "Starts flow when a policy is activated in Okta.(policy.lifecycle.activate)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "policyActivated",
+        "id": 118411
+    },
+    {
+        "display": {
+            "name": "listGroupMembers",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "List Group Members",
+            "description": "List all users within a group in Okta.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"resultSet\":{\"type\":\"option\",\"displayname\":\"Result Set\",\"choices\":[\"First 200 Records\",\"Stream Records\"]}}]"
+        },
+        "name": "listGroupMembers",
+        "id": 118479
+    },
+    {
+        "display": {
+            "name": "groupPrivilegeGranted",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Group Privilege Granted",
+            "description": "Starts flow when a group admin privilege is granted in Okta.(group.privilege.grant)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "groupPrivilegeGranted",
+        "id": 118397
+    },
+    {
+        "display": {
+            "name": "userAppPasswordChanged",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "User App Password Changed",
+            "description": "Starts flow when a user changes an application password in Okta. (application.user_membership.change_password)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[{\"useId\":{\"drives\":[\"app\",\"instance\"],\"required\":true,\"type\":\"option\",\"displayname\":\"Use App Instance ID?\",\"choices\":[\"Yes\",\"No\"]}},{\"app\":{\"dependsOn\":[\"useId\"],\"drives\":[\"instance\"],\"required\":true,\"optional\":false,\"type\":\"option\",\"displayname\":\"Application\",\"lookup\":{\"channel\":\"okta\",\"operation\":\"getActiveApplications\",\"key\":\"name\",\"value\":\"name\"}}},{\"instance\":{\"dependsOn\":[\"app\"],\"required\":true,\"type\":\"option\",\"displayname\":\"Application Instance\",\"lookup\":{\"channel\":\"okta\",\"operation\":\"getAppInstances\",\"key\":\"label\",\"value\":\"id\"},\"optional\":false}},{\"appId\":{\"type\":\"string\",\"displayname\":\"App Instance ID\",\"required\":false,\"optional\":true}}]",
+            "realtimeavailable": true
+        },
+        "name": "userAppPasswordChanged",
+        "id": 118425
+    },
+    {
+        "display": {
+            "name": "userDeleted",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "User Deleted",
+            "description": "Starts flow when a user is deleted in Okta.(user.lifecycle.delete.initiated)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "userDeleted",
+        "id": 118429
+    },
+    {
+        "display": {
+            "name": "createGroup",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Create Group",
+            "description": "Adds a new Group with OKTA_GROUP type to your organization.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[]"
+        },
+        "name": "createGroup",
+        "id": 118459
+    },
+    {
+        "display": {
+            "name": "createGroupRule",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Create Group Rule",
+            "description": "Creates a Group rule to dynamically add users to the specified Group if they match the condition.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[]"
+        },
+        "name": "createGroupRule",
+        "id": 118460
+    },
+    {
+        "display": {
+            "name": "deleteGroup",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Delete Group",
+            "description": "Removes a group of OKTA_GROUP or APP_GROUP type from your organization.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[]"
+        },
+        "name": "deleteGroup",
+        "id": 118467
+    },
+    {
+        "display": {
+            "name": "getAssignedUserForApplication",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Get Assigned User for Application ",
+            "description": "Fetches a specific user assignment for an application by ID in Okta.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"application\":{\"type\":\"option\",\"displayname\":\"Application\",\"lookup\":{\"channel\":\"Okta\",\"operation\":\"getAllActiveApplications\",\"key\":\"label\",\"value\":\"id\"}}}]"
+        },
+        "name": "getAssignedUserForApplication",
+        "id": 118473
+    },
+    {
+        "display": {
+            "name": "getAssociatedLinkedObjectValues",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Get Associated Linked Object Values",
+            "description": "For the primary user specified by ID, returns the list of user IDs and self links for the associated users in the relationship specified by associated name in Okta.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"associated\":{\"type\":\"option\",\"displayname\":\"Associated Name\",\"lookup\":{\"channel\":\"Okta\",\"operation\":\"createAssociatedNameDropdown\",\"key\":\"name\",\"value\":\"name\"}}}]"
+        },
+        "name": "getAssociatedLinkedObjectValues",
+        "id": 118474
+    },
+    {
+        "display": {
+            "name": "listApplicationsAssignedToGroup",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "List Applications Assigned to Group",
+            "description": "Enumerates apps assigned to a specific Group in Okta.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"resultSet\":{\"type\":\"option\",\"displayname\":\"Result Set\",\"choices\":[\"First 200 Records\",\"Stream Records\"]}}]"
+        },
+        "name": "listApplicationsAssignedToGroup",
+        "id": 118477
+    },
+    {
+        "display": {
+            "name": "listApplicationsAssignedToUser",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "List Applications Assigned to User",
+            "description": "Enumerates apps assigned to a specific User in Okta.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"resultSet\":{\"type\":\"option\",\"displayname\":\"Result Set\",\"choices\":[\"First 200 Records\",\"Stream Records\"]}}]"
+        },
+        "name": "listApplicationsAssignedToUser",
+        "id": 118478
+    },
+    {
+        "display": {
+            "name": "readAssignedGroupForApplication",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Read Assigned Group for Application",
+            "description": "Fetches an application group assignment in Okta.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"application\":{\"type\":\"option\",\"displayname\":\"Application\",\"lookup\":{\"channel\":\"Okta\",\"operation\":\"getAllActiveApplications\",\"key\":\"label\",\"value\":\"id\"}}}]"
+        },
+        "name": "readAssignedGroupForApplication",
+        "id": 118487
+    },
+    {
+        "display": {
+            "name": "groupPrivilegeRevoked",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Group Privilege Revoked",
+            "description": "Starts flow when group a admin privilege is revoked in Okta.(group.privilege.revoke)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "groupPrivilegeRevoked",
+        "id": 118398
+    },
+    {
+        "display": {
+            "name": "userReportedSuspiciousActivityBeta",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Suspicious Activity Reported",
+            "description": "Starts flow when a user reports suspicious activity in their account.(user.account.report_suspicious_activity_by_enduser)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "userReportedSuspiciousActivityBeta",
+        "id": 118419
+    },
+    {
+        "display": {
+            "name": "userDeactivated",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "User Deactivated",
+            "description": "Starts flow when a user is deactivated in Okta.(user.lifecycle.deactivate)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "userDeactivated",
+        "id": 118428
+    },
+    {
+        "display": {
+            "name": "userMFAFactorActivated",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "User MFA Factor Activated",
+            "description": "Starts flow when a user activates a MFA factor in Okta.(user.mfa.factor.activate)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "userMFAFactorActivated",
+        "id": 118431
+    },
+    {
+        "display": {
+            "name": "userReactivated",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "User Reactivated",
+            "description": "Starts flow when a user reactivates their Okta account.(user.lifecycle.reactivate)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "userReactivated",
+        "id": 118442
+    },
+    {
+        "display": {
+            "name": "addNewUserToGroup",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Add User to Group",
+            "description": "Adds an Okta user to a group with OKTA_GROUP type.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[]"
+        },
+        "name": "addNewUserToGroup",
+        "id": 118452
+    },
+    {
+        "display": {
+            "name": "assignUserToApplicationForSSO",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Assign User to Application for SSO",
+            "description": "Assigns a user without a profile to an application for SSO in Okta.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"application\":{\"type\":\"option\",\"displayname\":\"Application\",\"lookup\":{\"channel\":\"Okta\",\"operation\":\"getAllActiveApplications\",\"key\":\"label\",\"value\":\"id\"}}}]"
+        },
+        "name": "assignUserToApplicationForSSO",
+        "id": 118454
+    },
+    {
+        "display": {
+            "name": "clearUserSessions",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Clear User Sessions",
+            "description": "Removes all active identity provider sessions in Okta, forcing the user to authenticate on the next operation. Optionally revokes OpenID Connect and OAuth refresh and access tokens issued to the user.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[]"
+        },
+        "name": "clearUserSessions",
+        "id": 118457
+    },
+    {
+        "display": {
+            "name": "deleteLinkedObjectValue",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Delete Linked Object Value",
+            "description": "For the associated user specified by ID and the relationship specified by primary name, deletes any existing relationship between the associated and primary user in Okta.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"primary\":{\"type\":\"option\",\"displayname\":\"Primary Name\",\"lookup\":{\"channel\":\"Okta\",\"operation\":\"createPrimaryNameDropdown\",\"key\":\"name\",\"value\":\"name\"}}}]"
+        },
+        "name": "deleteLinkedObjectValue",
+        "id": 118470
+    },
+    {
+        "display": {
+            "name": "deleteUser",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Delete User",
+            "description": "Delete a user in Okta.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[]"
+        },
+        "name": "deleteUser",
+        "id": 118471
+    },
+    {
+        "display": {
+            "name": "searchUsers",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Find Users",
+            "description": "Finds users in Okta who match the specified query, use the q parameter for a simple lookup of users by name.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"resultSet\":{\"type\":\"option\",\"displayname\":\"Result Set\",\"choices\":[\"First Matching Record\",\"First 200 Matching Records\"]}}]"
+        },
+        "name": "searchUsers",
+        "id": 118472
+    },
+    {
+        "display": {
+            "name": "groupPushFailed",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Group Push Failed",
+            "description": "Starts flow when a group push fails in Okta. (application.provision.group_push.mapping.update.or.delete.failed.with.error)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "groupPushFailed",
+        "id": 118400
+    },
+    {
+        "display": {
+            "name": "policyRuleActivated",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Policy Rule Activated",
+            "description": "Starts flow when a policy rule is activated in Okta.(policy.rule.activate)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "policyRuleActivated",
+        "id": 118413
+    },
+    {
+        "display": {
+            "name": "oktaUserPasswordUpdated",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "User Okta Password Updated",
+            "description": "Starts flow when a user updates their Okta password.(user.account.update_password)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "oktaUserPasswordUpdated",
+        "id": 118437
+    },
+    {
+        "display": {
+            "name": "assignUserToApplicationForSSOAndProvisioning",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Assign User to Application for SSO And Provisioning",
+            "description": "Assigns a user to an application in Okta with credentials and an app-specific profile. Profile mappings defined for the application are first applied before applying any profile properties specified in the request.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"application\":{\"type\":\"option\",\"displayname\":\"Application\",\"lookup\":{\"channel\":\"Okta\",\"operation\":\"getAllActiveApplications\",\"key\":\"label\",\"value\":\"id\"}}}]"
+        },
+        "name": "assignUserToApplicationForSSOAndProvisioning",
+        "id": 118455
+    },
+    {
+        "display": {
+            "name": "updateApplicationCredentialsForAssignedUser",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Update Application Credentials for Assigned User ",
+            "description": "Updates a user's credentials for an assigned application in Okta.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"application\":{\"type\":\"option\",\"displayname\":\"Application\",\"lookup\":{\"channel\":\"Okta\",\"operation\":\"getAllActiveApplications\",\"key\":\"label\",\"value\":\"id\"}}}]"
+        },
+        "name": "updateApplicationCredentialsForAssignedUser",
+        "id": 118504
+    },
+    {
+        "display": {
+            "name": "importStarted",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Import Started",
+            "description": "Starts flow when an import is started in Okta.(system.import.start)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "importStarted",
+        "id": 118405
+    },
+    {
+        "display": {
+            "name": "policyRuleDeleted",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Policy Rule Deleted",
+            "description": "Starts flow when a policy rule is deleted in Okta.(policy.rule.delete)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "policyRuleDeleted",
+        "id": 118416
+    },
+    {
+        "display": {
+            "name": "syncUserInExternalApplication",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Sync User in External Application",
+            "description": "Starts flow when an administrator syncs external accounts to Okta.(application.provision.user.sync)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[{\"useId\":{\"drives\":[\"app\",\"instance\"],\"required\":true,\"type\":\"option\",\"displayname\":\"Use App Instance ID?\",\"choices\":[\"Yes\",\"No\"]}},{\"app\":{\"dependsOn\":[\"useId\"],\"drives\":[\"instance\"],\"required\":true,\"optional\":false,\"type\":\"option\",\"displayname\":\"Application\",\"lookup\":{\"channel\":\"okta\",\"operation\":\"getActiveApplications\",\"key\":\"name\",\"value\":\"name\"}}},{\"instance\":{\"dependsOn\":[\"app\"],\"required\":true,\"type\":\"option\",\"displayname\":\"Application Instance\",\"lookup\":{\"channel\":\"okta\",\"operation\":\"getAppInstances\",\"key\":\"label\",\"value\":\"id\"},\"optional\":false}},{\"appId\":{\"type\":\"string\",\"displayname\":\"App Instance ID\",\"required\":false,\"optional\":true}}]",
+            "realtimeavailable": true
+        },
+        "name": "syncUserInExternalApplication",
+        "id": 118420
+    },
+    {
+        "display": {
+            "name": "userAddedToGroupMembership",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "User Added to Group",
+            "description": "Starts flow when a user is added to a group in Okta.(group.user_membership.add)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "userAddedToGroupMembership",
+        "id": 118424
+    },
+    {
+        "display": {
+            "name": "userSuspended",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "User Suspended",
+            "description": "Starts flow when a user is suspended in Okta.(user.lifecycle.suspend)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "userSuspended",
+        "id": 118446
+    },
+    {
+        "display": {
+            "name": "listImportSessions",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "List Import Sessions",
+            "description": "No description provided.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"application\":{\"type\":\"option\",\"displayname\":\"Application\",\"lookup\":{\"channel\":\"Okta\",\"operation\":\"getCustomIdentitySourceApps\",\"key\":\"label\",\"value\":\"id\"}}}]"
+        },
+        "name": "listImportSessions",
+        "id": 118481
+    },
+    {
+        "display": {
+            "name": "mapProfileSourceAttributes",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Map Profile Source Attributes",
+            "description": "Create an Okta formatted list of user profile objects for a bulk import operation.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"application\":{\"type\":\"option\",\"displayname\":\"Application\",\"lookup\":{\"channel\":\"Okta\",\"operation\":\"getCustomIdentitySourceApps\",\"key\":\"label\",\"value\":\"id\"}}},{\"importOperation\":{\"type\":\"option\",\"displayname\":\"Import Operation\",\"choices\":[{\"displayName\":\"Create & Update\",\"optionValue\":\"UPSERT\"},{\"displayName\":\"Deactivate & Delete\",\"optionValue\":\"DELETE\"}]}}]"
+        },
+        "name": "mapProfileSourceAttributes",
+        "id": 118485
+    },
+    {
+        "display": {
+            "name": "oAuth2AppConsentGranted",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "OAuth2 App Consent Granted",
+            "description": "Starts flow when an OAuth2 App is granted consent by a user in Okta.(app.oauth2.as.consent.grant)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "oAuth2AppConsentGranted",
+        "id": 118406
+    },
+    {
+        "display": {
+            "name": "phoneVerificationCallSent",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Phone Verification Call Sent",
+            "description": "Starts flow when a user logs in and a verification phone call is sent in Okta.(system.voice.send_phone_verification_call)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "phoneVerificationCallSent",
+        "id": 118409
+    },
+    {
+        "display": {
+            "name": "userCreated",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "User Created",
+            "description": "Starts flow when a user is created in Okta.(user.lifecycle.create)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "userCreated",
+        "id": 118427
+    },
+    {
+        "display": {
+            "name": "policyRuleUpdated",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Policy Rule Updated",
+            "description": "Starts flow when a policy rule is updated in Okta.(policy.rule.update)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "policyRuleUpdated",
+        "id": 118417
+    },
+    {
+        "display": {
+            "name": "userAddedToApplicationMembership",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "User Assigned to Application",
+            "description": "Starts flow when a user is assigned to an application in Okta.(application.user_membership.add)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[{\"useId\":{\"drives\":[\"app\",\"instance\"],\"required\":true,\"type\":\"option\",\"displayname\":\"Use App Instance ID?\",\"choices\":[\"Yes\",\"No\"]}},{\"app\":{\"dependsOn\":[\"useId\"],\"drives\":[\"instance\"],\"required\":true,\"optional\":false,\"type\":\"option\",\"displayname\":\"Application\",\"lookup\":{\"channel\":\"okta\",\"operation\":\"getActiveApplications\",\"key\":\"name\",\"value\":\"name\"}}},{\"instance\":{\"dependsOn\":[\"app\"],\"required\":true,\"type\":\"option\",\"displayname\":\"Application Instance\",\"lookup\":{\"channel\":\"okta\",\"operation\":\"getAppInstances\",\"key\":\"label\",\"value\":\"id\"},\"optional\":false}},{\"appId\":{\"type\":\"string\",\"displayname\":\"App Instance ID\",\"required\":false,\"optional\":true}}]",
+            "realtimeavailable": true
+        },
+        "name": "userAddedToApplicationMembership",
+        "id": 118426
+    },
+    {
+        "display": {
+            "name": "activateApplication",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Activate Application",
+            "description": "Activates an Application in Okta.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[]"
+        },
+        "name": "activateApplication",
+        "id": 118449
+    },
+    {
+        "display": {
+            "name": "createAnImportSession",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Create an Import Session",
+            "description": "Create an import session in Okta.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"application\":{\"type\":\"option\",\"displayname\":\"Application\",\"lookup\":{\"channel\":\"Okta\",\"operation\":\"getCustomIdentitySourceApps\",\"key\":\"label\",\"value\":\"id\"}}}]"
+        },
+        "name": "createAnImportSession",
+        "id": 118458
+    },
+    {
+        "display": {
+            "name": "readApplication",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Read Application",
+            "description": "Fetches an application in Okta.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"application\":{\"type\":\"option\",\"displayname\":\"Application\",\"lookup\":{\"channel\":\"Okta\",\"operation\":\"getAllActiveApplications\",\"key\":\"label\",\"value\":\"id\"}}}]"
+        },
+        "name": "readApplication",
+        "id": 118486
+    },
+    {
+        "display": {
+            "name": "userMFAFactorResetAll",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "User MFA Factor Reset All",
+            "description": "Starts flow when a user resets all MFA factors in Okta.(user.mfa.factor.reset_all)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "userMFAFactorResetAll",
+        "id": 118433
+    },
+    {
+        "display": {
+            "name": "userPrivilegeRevoked",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "User Privilege Revoked",
+            "description": "Starts flow when a user admin privilege is revoked in Okta.(user.account.privilege.revoke)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "userPrivilegeRevoked",
+        "id": 118441
+    },
+    {
+        "display": {
+            "name": "hTTPRequest",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Custom API Action",
+            "description": "Make an authenticated HTTP request to the Okta API.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"requestType\":{\"type\":\"option\",\"displayname\":\"Request Type\",\"choices\":[\"GET\",\"POST\",\"PUT\",\"PATCH\",\"DELETE\"]}}]"
+        },
+        "name": "hTTPRequest",
+        "id": 118462
+    },
+    {
+        "display": {
+            "name": "userOktaPasswordResetbyanAdmin",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "User Okta Password Reset by an Admin",
+            "description": "Starts flow when a user's Okta password is reset by an admin.(user.account.reset_password)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "userOktaPasswordResetbyanAdmin",
+        "id": 118436
+    },
+    {
+        "display": {
+            "name": "userRemovedFromGroupMembership",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "User Removed from Group",
+            "description": "Starts flow when a user is removed from a group in Okta.(group.user_membership.remove)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "userRemovedFromGroupMembership",
+        "id": 118443
+    },
+    {
+        "display": {
+            "name": "userSignedIn",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "User Sign In Attempt",
+            "description": "Starts flow when a user attempts to sign in to Okta.(user.session.start)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "userSignedIn",
+        "id": 118444
+    },
+    {
+        "display": {
+            "name": "userSignedOut",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "User Signed Out",
+            "description": "Starts flow when a user signs out from Okta.(user.session.end)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "userSignedOut",
+        "id": 118445
+    },
+    {
+        "display": {
+            "name": "userRemovedFromApplicationMembership",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "User Unassigned from Application",
+            "description": "Starts flow when a user is unassigned from an application in Okta.(application.user_membership.remove)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[{\"useId\":{\"drives\":[\"app\",\"instance\"],\"required\":true,\"type\":\"option\",\"displayname\":\"Use App Instance ID?\",\"choices\":[\"Yes\",\"No\"]}},{\"app\":{\"dependsOn\":[\"useId\"],\"drives\":[\"instance\"],\"required\":true,\"optional\":false,\"type\":\"option\",\"displayname\":\"Application\",\"lookup\":{\"channel\":\"okta\",\"operation\":\"getActiveApplications\",\"key\":\"name\",\"value\":\"name\"}}},{\"instance\":{\"dependsOn\":[\"app\"],\"required\":true,\"type\":\"option\",\"displayname\":\"Application Instance\",\"lookup\":{\"channel\":\"okta\",\"operation\":\"getAppInstances\",\"key\":\"label\",\"value\":\"id\"},\"optional\":false}},{\"appId\":{\"type\":\"string\",\"displayname\":\"App Instance ID\",\"required\":false,\"optional\":true}}]",
+            "realtimeavailable": true
+        },
+        "name": "userRemovedFromApplicationMembership",
+        "id": 118447
+    },
+    {
+        "display": {
+            "name": "userUnsuspended",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "User Unsuspended",
+            "description": "Starts flow when a user is unsuspended in Okta.(user.lifecycle.unsuspend)",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "event",
+            "params": "[]",
+            "realtimeavailable": true
+        },
+        "name": "userUnsuspended",
+        "id": 118448
+    },
+    {
+        "display": {
+            "name": "activateUser",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Activate User",
+            "description": "Activates a user in Okta (asynchronous operation). This operation can only be performed on users with a STAGED status.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"sendEmail\":{\"type\":\"option\",\"displayname\":\"Send Email?\",\"choices\":[\"Yes\",\"No\"]}}]"
+        },
+        "name": "activateUser",
+        "id": 118451
+    },
+    {
+        "display": {
+            "name": "createUser",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Create User",
+            "description": "Creates a user in Okta based on selected parameters.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"option\":{\"type\":\"option\",\"displayname\":\"Option\",\"choices\":[{\"displayName\":\"without Credentials\",\"optionValue\":\"getInputsnoCreds\"},{\"displayName\":\"with Recovery Question\",\"optionValue\":\"getInputswithRecoveryQ\"},{\"displayName\":\"with Password\",\"optionValue\":\"getInputswithPW\"},{\"displayName\":\"with Password & Recovery Question\",\"optionValue\":\"getInputsPWRecoveryQ\"},{\"displayName\":\"with Authentication Provider\",\"optionValue\":\"getInputsAuthProv\"},{\"displayName\":\"in Group\",\"optionValue\":\"getInputsGroup\"}]}}]"
+        },
+        "name": "createUser",
+        "id": 118461
+    },
+    {
+        "display": {
+            "name": "deactivateApplication",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Deactivate Application",
+            "description": "Deactivates an Application in Okta.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[]"
+        },
+        "name": "deactivateApplication",
+        "id": 118463
+    },
+    {
+        "display": {
+            "name": "deactivateUser",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Deactivate User",
+            "description": "Deactivates a user in Okta (asynchronous action). This operation can only be performed on users that do not have a DEPROVISIONED status. This action cannot be recovered!",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"sendEmail\":{\"type\":\"option\",\"displayname\":\"Send Email?\",\"choices\":[\"Yes\",\"No\"]}}]"
+        },
+        "name": "deactivateUser",
+        "id": 118465
+    },
+    {
+        "display": {
+            "name": "deleteApplication",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Delete Application",
+            "description": "Deletes an Application in Okta.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[]"
+        },
+        "name": "deleteApplication",
+        "id": 118466
+    },
+    {
+        "display": {
+            "name": "deleteImportSession",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Delete Import Session",
+            "description": "Delete an Okta import session.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"application\":{\"type\":\"option\",\"displayname\":\"Application\",\"lookup\":{\"channel\":\"Okta\",\"operation\":\"getCustomIdentitySourceApps\",\"key\":\"label\",\"value\":\"id\"}}}]"
+        },
+        "name": "deleteImportSession",
+        "id": 118469
+    },
+    {
+        "display": {
+            "name": "activateGroupRule",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Activate Group Rule",
+            "description": "Activates a specific Group rule by ID from your organization.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[]"
+        },
+        "name": "activateGroupRule",
+        "id": 118450
+    },
+    {
+        "display": {
+            "name": "removeGroupFromApplication",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Remove Group from Application",
+            "description": "Removes a group assignment from an application in Okta.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"application\":{\"type\":\"option\",\"displayname\":\"Application\",\"lookup\":{\"channel\":\"Okta\",\"operation\":\"getAllActiveApplications\",\"key\":\"label\",\"value\":\"id\"}}}]"
+        },
+        "name": "removeGroupFromApplication",
+        "id": 118492
+    },
+    {
+        "display": {
+            "name": "resetPassword",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Reset Password",
+            "description": "Reset a user’s password in Okta.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"convert\":{\"type\":\"option\",\"displayname\":\"Convert to Federated User\",\"defaultValue\":\"No\",\"choices\":[\"Yes\",\"No\"]}},{\"email\":{\"dependsOn\":[\"convert\"],\"type\":\"option\",\"displayname\":\"Send Email\",\"lookup\":{\"channel\":\"okta\",\"operation\":\"getSendEmailOptions\",\"key\":\"label\",\"value\":\"value\"}}}]"
+        },
+        "name": "resetPassword",
+        "id": 118495
+    },
+    {
+        "display": {
+            "name": "unsuspendUser",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Unsuspend User",
+            "description": "Unsuspends a user in Okta and returns them to the ACTIVE state  This operation can only be performed on users that have a SUSPENDED status.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[]"
+        },
+        "name": "unsuspendUser",
+        "id": 118503
+    },
+    {
+        "display": {
+            "name": "bulkUserImport",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Bulk User Import",
+            "description": "Bulk import users for creating, updating, deactivating, and deleting in Okta.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"application\":{\"type\":\"option\",\"displayname\":\"Application\",\"lookup\":{\"channel\":\"Okta\",\"operation\":\"getCustomIdentitySourceApps\",\"key\":\"label\",\"value\":\"id\"}}},{\"importOperation\":{\"type\":\"option\",\"displayname\":\"Import Operation\",\"choices\":[{\"displayName\":\"Create & Update\",\"optionValue\":\"upsert\"},{\"displayName\":\"Deactivate & Delete\",\"optionValue\":\"delete\"}]}}]"
+        },
+        "name": "bulkUserImport",
+        "id": 118456
+    },
+    {
+        "display": {
+            "name": "deleteGroupRule",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Delete Group Rule",
+            "description": "Removes a specific Group rule by ID from your organization.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[]"
+        },
+        "name": "deleteGroupRule",
+        "id": 118468
+    },
+    {
+        "display": {
+            "name": "getPrimaryLinkedObjectValue",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Get Primary Linked Object Value",
+            "description": "For the associated user specified by ID, returns the user id and self link for the primary user in the relationship specified by primary name in Okta.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"primary\":{\"type\":\"option\",\"displayname\":\"Primary Name\",\"lookup\":{\"channel\":\"Okta\",\"operation\":\"createPrimaryNameDropdown\",\"key\":\"name\",\"value\":\"name\"}}}]"
+        },
+        "name": "getPrimaryLinkedObjectValue",
+        "id": 118475
+    },
+    {
+        "display": {
+            "name": "listGroupsAssignedToApplication",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "List Groups Assigned to Application",
+            "description": "Enumerates group assignments for an application in Okta.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"application\":{\"type\":\"option\",\"displayname\":\"Application\",\"lookup\":{\"channel\":\"Okta\",\"operation\":\"getAllActiveApplications\",\"key\":\"label\",\"value\":\"id\"}}},{\"resultSet\":{\"type\":\"option\",\"displayname\":\"Result Set\",\"choices\":[\"First 200 Records\",\"Stream Records\"]}}]"
+        },
+        "name": "listGroupsAssignedToApplication",
+        "id": 118480
+    },
+    {
+        "display": {
+            "name": "readImportSession",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Read Import Session",
+            "description": "Read information about an Okta import session.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"application\":{\"type\":\"option\",\"displayname\":\"Application\",\"lookup\":{\"channel\":\"Okta\",\"operation\":\"getCustomIdentitySourceApps\",\"key\":\"label\",\"value\":\"id\"}}}]"
+        },
+        "name": "readImportSession",
+        "id": 118490
+    },
+    {
+        "display": {
+            "name": "readGroup",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Read Group",
+            "description": "Get information about a specific group in Okta.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[]"
+        },
+        "name": "readGroup",
+        "id": 118488
+    },
+    {
+        "display": {
+            "name": "updateGroup",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Update Group",
+            "description": "Updates the profile for a group of OKTA_GROUP type from your organization.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[]"
+        },
+        "name": "updateGroup",
+        "id": 118506
+    },
+    {
+        "display": {
+            "name": "readGroupRule",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Read Group Rule",
+            "description": "Fetches a specific Group rule by ID from your organization.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[]"
+        },
+        "name": "readGroupRule",
+        "id": 118489
+    },
+    {
+        "display": {
+            "name": "triggerImportSession",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Trigger Import Session",
+            "description": "Trigger an import session in Okta that is ready for processing. This step should occur after bulk importing users.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"application\":{\"type\":\"option\",\"displayname\":\"Application\",\"lookup\":{\"channel\":\"Okta\",\"operation\":\"getCustomIdentitySourceApps\",\"key\":\"label\",\"value\":\"id\"}}}]"
+        },
+        "name": "triggerImportSession",
+        "id": 118502
+    },
+    {
+        "display": {
+            "name": "removeUserFromGroup",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Remove User from Group",
+            "description": "Removes a user from a group with OKTA_GROUP type.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[]"
+        },
+        "name": "removeUserFromGroup",
+        "id": 118494
+    },
+    {
+        "display": {
+            "name": "searchSystemLogs",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Search System Logs",
+            "description": "Search for log events from your organization's system log in Okta.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"searchBy\":{\"type\":\"option\",\"displayname\":\"Search By\",\"choices\":[\"Expression\",\"Keyword\"]}},{\"resultSet\":{\"type\":\"option\",\"displayname\":\"Result Set\",\"choices\":[\"First Matching Record\",\"First 200 Matching Records\",\"Stream Matching Records\"]}}]"
+        },
+        "name": "searchSystemLogs",
+        "id": 118499
+    },
+    {
+        "display": {
+            "name": "setLinkedObjectValueForPrimary",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Set Linked Object Value for Primary",
+            "description": "Sets the associated user and the primary user specified by ID for the relationship specified by primary name in Okta.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"primary\":{\"type\":\"option\",\"displayname\":\"Primary Name\",\"lookup\":{\"channel\":\"Okta\",\"operation\":\"createPrimaryNameDropdown\",\"key\":\"name\",\"value\":\"name\"}}}]"
+        },
+        "name": "setLinkedObjectValueForPrimary",
+        "id": 118500
+    },
+    {
+        "display": {
+            "name": "suspendUser",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Suspend User",
+            "description": "Suspends a user in Okta. This operation can only be performed on users with an ACTIVE status. The user will have a status of SUSPENDED when the process is complete.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[]"
+        },
+        "name": "suspendUser",
+        "id": 118501
+    },
+    {
+        "display": {
+            "name": "searchGroupRules",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Search Group Rules",
+            "description": "Search all Group rules for your organization.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"resultSet\":{\"type\":\"option\",\"displayname\":\"Result Set\",\"choices\":[\"First Matching Record\",\"First 200 Matching Records\",\"Stream Matching Records\"]}}]"
+        },
+        "name": "searchGroupRules",
+        "id": 118497
+    },
+    {
+        "display": {
+            "name": "searchGroups",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Search Groups",
+            "description": "Searches by groups in your Okta organization.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"resultSet\":{\"type\":\"option\",\"displayname\":\"Result Set\",\"choices\":[\"First Matching Record\",\"First 200 Matching Records\",\"Stream Matching Records\"]}}]"
+        },
+        "name": "searchGroups",
+        "id": 118498
+    },
+    {
+        "display": {
+            "name": "updateApplicationProfileForAssignedUser",
+            "configurationrequired": true,
+            "configurationscheme": "flo!okta",
+            "displayname": "Update Application Profile for Assigned User",
+            "description": "Updates a user's profile for an application in Okta.",
+            "enabled": true,
+            "icon": "https://s3.amazonaws.com/azuqua_static/designer/icons-pirsq/okta.png",
+            "kind": "action",
+            "params": "[{\"application\":{\"type\":\"option\",\"displayname\":\"Application\",\"lookup\":{\"channel\":\"Okta\",\"operation\":\"getAllActiveApplications\",\"key\":\"label\",\"value\":\"id\"}}}]"
+        },
+        "name": "updateApplicationProfileForAssignedUser",
+        "id": 118505
+    }
+]

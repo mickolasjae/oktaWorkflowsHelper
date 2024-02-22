@@ -1,0 +1,152 @@
+{
+    "Flo": {
+        "type": "flo",
+        "_v": 2,
+        "anon": false,
+        "verbose": false,
+        "complexity": 0,
+        "flannel": false,
+        "durable": false,
+        "flags": {},
+        "metadata": {
+            "id": null,
+            "user_id": null,
+            "org_id": null,
+            "rbac": {},
+            "description": null,
+            "version": "0.0.1",
+            "channel_tree_id": null,
+            "name": null,
+            "async": false,
+            "org": {},
+            "user": {},
+            "partner": {},
+            "log": false
+        },
+        "vas": {
+            "metadata": {
+                "execID": null,
+                "execCount": null,
+                "started": null,
+                "compiled": null,
+                "callback": null,
+                "channel": null,
+                "stackLength": 1,
+                "localStackLength": 1,
+                "initSize": 0,
+                "runSize": 0
+            },
+            "runtime": {
+                "async": [],
+                "retried": false,
+                "mode": "regular",
+                "state": null,
+                "IAR": null,
+                "children": [],
+                "parent": {
+                    "flo": null,
+                    "exec": null,
+                    "invariant": null
+                },
+                "priority": 0,
+                "gc": {
+                    "custom": false,
+                    "refs": {},
+                    "indices": {},
+                    "pivots": {},
+                    "methods": {}
+                },
+                "cache": {}
+            },
+            "data": {
+                "inputs": {},
+                "outputs": {}
+            },
+            "text": {
+                "io": null,
+                "methods": null,
+                "scopes": null
+            }
+        }
+    },
+    "Method": {
+        "type": "method",
+        "_v": 2,
+        "key": null,
+        "executable": true,
+        "displayed": true,
+        "async": false,
+        "cooperative": false,
+        "mirrored": false,
+        "compat": false,
+        "inlined": false,
+        "dependencies": [],
+        "timeout": 30000,
+        "idempotent": false,
+        "monitor": false,
+        "webhook": false,
+        "webhookList": false,
+        "webhookConditions": false,
+        "mobile": false,
+        "hooks": {},
+        "policy": {
+            "error": {
+                "type": "finish"
+            }
+        },
+        "metadata": {
+            "id": null,
+            "name": null,
+            "description": null
+        },
+        "meta": {},
+        "config": null,
+        "partnerChannelKeys": null,
+        "inputs": {
+            "extensible": false,
+            "rules": {},
+            "groupRules": {},
+            "data": {}
+        },
+        "outputs": {
+            "extensible": false,
+            "rules": {},
+            "groupRules": {},
+            "data": {}
+        },
+        "runtime": {},
+        "display": {}
+    },
+    "Input": {
+        "id": null,
+        "group": null,
+        "key": null,
+        "value": {
+            "error": false,
+            "proxy": false,
+            "check": false,
+            "type": null,
+            "collection": false,
+            "data": null,
+            "available": []
+        },
+        "required": false,
+        "ref": false,
+        "metadata": {},
+        "flags": "d"
+    },
+    "Output": {
+        "id": null,
+        "group": null,
+        "key": null,
+        "value": {
+            "error": false,
+            "type": null,
+            "collection": false,
+            "data": null,
+            "available": []
+        },
+        "ref": false,
+        "metadata": {}
+    }
+}
