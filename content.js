@@ -38,7 +38,7 @@ async function processResponse(res) {
         // Assuming each fetch operation returns an array of flows, 
         // and you want to concatenate all these arrays.
         let allFlows = flowsResults.flat(); // Use .flat() if you expect nested arrays and want to flatten them
-
+        
         var text = {
             id: res.id,
             active: res.active,
@@ -53,7 +53,7 @@ async function processResponse(res) {
             privileges: [...res.privileges],
             groups: [...res.groups],
             projects: [...res.projects],
-            flows: allFlows // This now includes flows from all fetch responses
+            flows: [...allFlows] // This now includes flows from all fetch responses
         };
 
         return text; // Return the constructed object
@@ -62,76 +62,6 @@ async function processResponse(res) {
         return null; // Or handle the error as appropriate
     }
 }
-
-// // Modified processResponse to return the processed data
-// function processResponse(res) {
-
-//     var orgId = res.id;
-//     var groups = res.groups;
-//     var url = document.documentURI;
-//     const parsedUrl = new URL(url);
-//     const hostnameParts = parsedUrl.hostname.split(".");
-//     let oktaSubdomain = hostnameParts.length > 2 ? hostnameParts[0] : null;
-//     let oktaEnvironment = hostnameParts.includes("oktapreview") ? "oktapreview" : "okta";
-//     const generatedUrl = `https://${oktaSubdomain}.workflows.${oktaEnvironment}.com`;
-    
-//     for (let group of groups) { // Use `for...of` for iterating over array elements
-//         let groupUrl = generatedUrl + "/app/api/flo?org_id=" + orgId + "&group_id=" + group.id;
-    
-//         fetch(groupUrl)
-//             .then(response => response.json())
-//             .then(flows => {
-//                 // //console.log(flows); // Assuming `flows` is the array or object you're interested in
-//                 // if (Array.isArray(flows)) { // Check if flows is an array
-//                 //     for (let flow of flows) { // Use `for...of` to iterate over array elements
-//                 //         //console.log(flow.id);
-//                 //     }
-//                 // } else {
-//                 //     console.log("Flows is not an array.");
-//                 // }
-                
-//                 console.log(flows)
-//                 var text = {
-//                     id: res.id,
-//                     active: res.active,
-//                     created: res.created,
-//                     name: res.name,
-//                     hostname: res.hostname,
-//                     externalid: res.externalid,
-//                     namespace: res.namespace,
-//                     plan: { ...res.plan }, // Directly copy the plan object
-//                     features: [...res.features], // Directly copy the features array
-//                     userAgreements: [...res.userAgreements], // Directly copy the user agreements array
-//                     privileges: [...res.privileges], // Directly copy the privileges array
-//                     groups: [...res.groups], // Directly copy the groups array,
-//                     projects: [...res.projects], // Directly copy the projects array
-//                     flows: [...flows]
-//                 }
-                
-                
-//             })
-            
-//             .catch(error => console.error("Error fetching data:", error));
-//     }
-
-//     // var text = {
-//     //     id: res.id,
-//     //     active: res.active,
-//     //     created: res.created,
-//     //     name: res.name,
-//     //     hostname: res.hostname,
-//     //     externalid: res.externalid,
-//     //     namespace: res.namespace,
-//     //     plan: { ...res.plan }, // Directly copy the plan object
-//     //     features: [...res.features], // Directly copy the features array
-//     //     userAgreements: [...res.userAgreements], // Directly copy the user agreements array
-//     //     privileges: [...res.privileges], // Directly copy the privileges array
-//     //     groups: [...res.groups], // Directly copy the groups array,
-//     //     projects: [...res.projects] // Directly copy the projects array
-//     // }
-//     return text // Return the processed data
-    
-// }
 
 async function fetchDataFromUrl(url) {
     const response = await fetch(url+"/app/api/org")
@@ -157,6 +87,7 @@ async function fetchDataAndProcess() {
 // Using the async function in the main block
 (async () => {
     try {
+        ExtensionOn = false
         const appApiOrg = await fetchDataAndProcess(); // Corrected variable name for response   
         // console.log(appApiOrg)     
         chrome.runtime.onMessage.addListener(
@@ -168,6 +99,7 @@ async function fetchDataAndProcess() {
         )
         var port = chrome.runtime.connect({name: "flowgram"});
         port.postMessage(appApiOrg);
+        
         
         
 
