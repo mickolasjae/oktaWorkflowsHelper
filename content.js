@@ -87,16 +87,15 @@ async function fetchDataAndProcess() {
 // Using the async function in the main block
 (async () => {
     try {
-        ExtensionOn = false
         const appApiOrg = await fetchDataAndProcess(); // Corrected variable name for response   
-        // console.log(appApiOrg)     
-        chrome.runtime.onMessage.addListener(
-            function (message, sender, sendResponse) {
-                if (message.type === "getText") { // Changed 'switch' to 'if' for simplicity
-                    sendResponse(appApiOrg)
-                }
-            }
-        )
+        // // console.log(appApiOrg)     
+        // chrome.runtime.onMessage.addListener(
+        //     function (message, sender, sendResponse) {
+        //         if (message.type === "getText") { // Changed 'switch' to 'if' for simplicity
+        //             sendResponse(appApiOrg)
+        //         }
+        //     }
+        // )
         var port = chrome.runtime.connect({name: "flowgram"});
         port.postMessage(appApiOrg);
         
