@@ -1,13 +1,12 @@
-chrome.action.onClicked.addListener(function(tab) {
-  chrome.tabs.create({
-      'url': chrome.runtime.getURL("popup.html#window")
-  });
-});
+chrome.action.disable();
 
 chrome.runtime.onConnect.addListener(function(port) {
     console.assert(port.name === "flowgram");
-    port.onMessage.addListener(function(msg) {
-    console.log(msg)
+    port.onMessage.addListener(function(response) {
+    console.log(response)
+    chrome.action.enable()
     });
   });
+
+  
 

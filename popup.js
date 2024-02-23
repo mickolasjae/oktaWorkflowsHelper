@@ -1,4 +1,30 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Create the open button
+    const openPopupButton = document.createElement("button");
+    openPopupButton.textContent = "Open Popup";
+    openPopupButton.style.padding = "10px 20px";
+    openPopupButton.style.fontSize = "16px";
+    openPopupButton.style.borderRadius = "5px";
+    openPopupButton.style.border = "none";
+    openPopupButton.style.cursor = "pointer";
+    openPopupButton.style.backgroundColor = "#007bff";
+    openPopupButton.style.color = "white";
+    openPopupButton.style.marginBottom = "20px"; // Add space below the button
+    openPopupButton.style.boxShadow = "0 4px 8px rgba(0,0,0,0.1)"; // Modern shadow effect
+    openPopupButton.onmouseover = function() {
+      this.style.opacity = "0.9"; // Slight hover effect for modern feel
+    };
+    openPopupButton.onmouseout = function() {
+      this.style.opacity = "1"; // Revert hover effect
+    };
+  
+    // Add event listener to open popup.html
+    openPopupButton.addEventListener("click", function() {
+      window.open('popup.html', '_blank', 'width=600,height=400'); // Opens popup.html in a new popup window
+    });
+  
+    // Append the button to the body or a specific container within the document
+    document.body.insertBefore(openPopupButton, document.body.firstChild);
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     chrome.tabs.sendMessage(
       tabs[0].id,

@@ -31,7 +31,9 @@
   "permissions": [
     "cookies",
     "tabs",
-    "storage"
+    "storage",
+    "declarativeContent",
+    "activeTab"
   ]
 
   }
