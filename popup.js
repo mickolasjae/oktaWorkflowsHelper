@@ -125,6 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
           };
           groupsTableBody.appendChild(row);
         });
+        
         // Populate Projects Table
         const projectsTableBody = document
           .getElementById("ProjectsTable")
@@ -145,77 +146,90 @@ document.addEventListener("DOMContentLoaded", function () {
           projectsTableBody.appendChild(row);
         });
 
-        // Populate Flows Table
-        // Function to create a collapsible content block
-function createCollapsibleContent(data) {
-    const wrapper = document.createElement('div');
-    wrapper.style.display = 'none'; // Start hidden
-    const content = document.createElement('pre'); // Use pre for formatted text, or customize as needed
-    content.textContent = JSON.stringify(data, null, 2);
-    wrapper.appendChild(content);
-    
-    // Toggle display on click
-    wrapper.addEventListener('click', () => {
-      wrapper.style.display = wrapper.style.display === 'none' ? '' : 'none';
-    });
-    
-    return wrapper;
-  }
-  
-  // Populate Flows Table with dynamic data handling
-  const flowsTableBody = document.getElementById("FlowsTable").getElementsByTagName("tbody")[0];
-  flowsTableBody.innerHTML = ""; // Clear existing rows
-  
-  response.flows.forEach((flow) => {
-    const row = document.createElement("tr");
-    
-    // Function to add cell to the row
-    const addCell = (content) => {
-      const cell = document.createElement("td");
-      if (typeof content === 'object') { // If content is an object, make it collapsible
-        const collapsibleContent = createCollapsibleContent(content);
-        cell.appendChild(collapsibleContent);
-        cell.addEventListener('click', () => collapsibleContent.style.display = '');
-      } else {
-        cell.textContent = content;
-      }
-      row.appendChild(cell);
-    };
-    
-    // Add cells for simple keys
-    addCell(flow.id);
-    addCell(flow.org_id);
-    addCell(flow.group_id);
-    addCell(flow.user_id);
-    addCell(flow.name);
-    addCell(flow.uuid);
-    addCell(flow.description);
-    addCell(flow.client_token);
-    
-    // Handle complex keys
-    // For display key
-    if (flow.display) {
-      addCell({preview: flow.display.preview.map(p => ({module: p.module, name: p.name, kernel: p.kernel})), eventConnectorName: flow.display.eventConnectorName, isCallable: flow.display.isCallable});
-    } else {
-      addCell('None');
-    }
-    
-    // For oAuth2Apps
-    if (flow.oAuth2Apps && flow.oAuth2Apps.length > 0) {
-      addCell(flow.oAuth2Apps);
-    } else {
-      addCell('None');
-    }
-    
-    // For privileges
-    if (flow.privileges && flow.privileges.length > 0) {
-      addCell(flow.privileges.map(p => ({resource: p.resource, privilege: p.privilege})));
-    } else {
-      addCell('None');
-    }
-    
-    flowsTableBody.appendChild(row);
-  });
+        const flowsTableBody = document
+          .getElementById("FlowsTable")
+          .getElementsByTagName("tbody")[0];
+        flowsTableBody.innerHTML = ""; // Clear existing rows
+
+        response.flows.forEach((flow) => {
+          const row = document.createElement("tr");
+
+          // Function to add cell to the row
+          const addCell = (content) => {
+            
+            const cell = document.createElement("td");
+            if (typeof content === "object" && content !== null) {
+              // Simplify the display of objects for demonstration. Consider implementing a detailed display method.
+              cell.textContent = JSON.stringify(content);
+            } else {
+              cell.textContent = content ?? "N/A"; // Use 'N/A' for undefined or null values
+            }
+            row.appendChild(cell);
+          };
+
+          // List of keys to add cells for, directly from flow object
+          const keys = [
+            "id",
+            "org_id",
+            "group_id",
+            "user_id",
+            "name",
+            "uuid",
+            "description",
+            "client_token",
+            "execution_count",
+            "last_run",
+            "active",
+            "alias",
+            "security_level",
+            "created",
+            "updated",
+            "published",
+            "scheduled",
+            "locked",
+            "last_run_success",
+            "last_run_fail",
+            "blob_hash",
+            "type",
+            "channel_key",
+            "channel_version",
+            "channel_method",
+            "edited",
+            "rust",
+            "template_name",
+            "role_type",
+          ];
+
+          // Add cells for simple keys
+          keys.forEach((key) => addCell(flow[key]));
+        //add display column
+
+
+
+
+          const flowPrivilegesCell = document.createElement("td")
+          row.appendChild(flowPrivilegesCell);
+          const btnP = document.createElement("button");
+          btnP.textContent = "Show Privileges";
+          btnP.className = "collapsible";
+          const contentDiv = document.createElement("div");
+          contentDiv.className = "content";
+          contentDiv.innerHTML = flow.privileges
+            .map((flow) => `${flow.resource}: ${flow.privilege}`)
+            .join(", ");
+            flowPrivilegesCell.appendChild(btnP);
+            flowPrivilegesCell.appendChild(contentDiv);
+            btnP.onclick = function () {
+            this.textContent =
+              contentDiv.style.display === "block"
+                ? "Show Privileges"
+                : "Hide Privileges";
+            contentDiv.style.display =
+              contentDiv.style.display === "block" ? "none" : "block";
+          };
+
+          flowsTableBody.appendChild(row);
+        });
 
         const tables = [
           { id: "OrgDetailsTable", label: "Org Details" },
@@ -224,7 +238,7 @@ function createCollapsibleContent(data) {
           { id: "UserAgreementsTable", label: "User Agreements" },
           { id: "GroupsTable", label: "Groups" },
           { id: "ProjectsTable", label: "Projects" },
-          { id: "FlowsTable", label: "Flows"}
+          { id: "FlowsTable", label: "Flows" },
         ];
 
         // Loop through each table and create a button to toggle visibility
@@ -250,6 +264,43 @@ function createCollapsibleContent(data) {
             });
           }
         });
+        function sortTable(table, columnIndex, asc = true) {
+          const dirModifier = asc ? 1 : -1;
+          const tbody = table.tBodies[0];
+          const rows = Array.from(tbody.querySelectorAll("tr"));
+  
+          // Sort each row
+          const sortedRows = rows.sort((a, b) => {
+              const aText = a.querySelector(`td:nth-child(${columnIndex + 1})`).textContent.trim();
+              const bText = b.querySelector(`td:nth-child(${columnIndex + 1})`).textContent.trim();
+  
+              return aText > bText ? (1 * dirModifier) : (-1 * dirModifier);
+          });
+  
+          // Remove all existing TRs from the table
+          while (tbody.firstChild) {
+              tbody.removeChild(tbody.firstChild);
+          }
+  
+          // Re-add the newly sorted rows
+          tbody.append(...sortedRows);
+  
+          // Remember how the column is currently sorted
+          table.querySelectorAll("th").forEach(th => th.classList.remove("asc", "desc"));
+          table.querySelector(`th:nth-child(${columnIndex + 1})`).classList.toggle("asc", asc);
+          table.querySelector(`th:nth-child(${columnIndex + 1})`).classList.toggle("desc", !asc);
+      }
+  
+      // Attach click event listeners to all table headers in all tables
+      document.querySelectorAll("table").forEach(table => {
+          let asc = true;
+          table.querySelectorAll("th").forEach((headerCell, columnIndex) => {
+              headerCell.addEventListener("click", () => {
+                  const isAsc = headerCell.classList.contains("asc");
+                  sortTable(table, columnIndex, !isAsc);
+              });
+          });
+      });
       }
     );
   });

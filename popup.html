@@ -1,51 +1,119 @@
 <html>
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Okta Workflows Details</title>
   <style>
     body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
       font-size: 12px;
+      /* Adjusted for consistency */
+    }
+
+    h2 {
+      text-align: center;
+      padding: 20px 0;
+      color: #444;
     }
 
     table {
-      width: 100%;
+      width: 90%;
+      margin: 10px auto;
       border-collapse: collapse;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       font-size: 12px;
+      /* Adjusted for consistency */
     }
 
-    table,
-    th,
-    td {
-      border: 1px solid black;
-      padding: 8px;
+    caption {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 10px;
       text-align: left;
     }
 
+    th,
+    td {
+      border: 1px solid black;
+      /* Adjusted for consistency */
+      padding: 8px;
+      text-align: left;
+
+    }
+
     th {
+      background-color: #007bff;
+      color: #fff;
+      position: -webkit-sticky;
+      /* For Safari */
+      position: sticky;
+      top: 0;
+      /* Adjust this value based on your layout and header size */
+      z-index: 2;
+      /* Ensure the header is above other content when scrolling */
+    }
+
+    tr:nth-child(even) {
       background-color: #f2f2f2;
     }
 
     .section {
-      margin-top: 20px;
+      margin: 40px 0;
     }
 
     .collapsible {
+      background-color: #007bff;
+      color: white;
       cursor: pointer;
-      padding: 5px;
+      padding: 10px;
+      width: 90%;
       border: none;
       text-align: left;
       outline: none;
-      font-size: 12px;
+      font-size: 15px;
+      margin: 10px auto;
     }
 
     .active,
     .collapsible:hover {
-      background-color: #f1f1f1;
+      background-color: #0056b3;
     }
 
     .content {
+      padding: 0 18px;
       display: none;
       overflow: hidden;
+      background-color: #f9f9f9;
+      width: 90%;
+      margin: auto;
+    }
+
+    .collapsible-button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      outline: none;
+      /* Removes the outline for focused buttons, consider a different focus indicator for accessibility */
+    }
+
+    .collapsible-button:hover,
+    .collapsible-button:focus {
+      background-color: #0056b3;
+    }
+
+    .collapsible-button[aria-expanded="true"] {
+      background-color: #0056b3;
     }
   </style>
 </head>
@@ -154,8 +222,8 @@
       <!-- Dynamic rows will be inserted here -->
     </tbody>
   </table>
-<br>
-<br>
+  <br>
+  <br>
   <table id="ProjectsTable">
     <caption>Project Details</caption>
     <thead>
@@ -184,9 +252,29 @@
         <th>UUID</th>
         <th>Description</th>
         <th>Client Token</th>
-        <!-- Add headers for new dynamic keys as needed -->
-        <th>Display</th>
-        <th>OAuth2 Apps</th>
+        <th>Execution Count</th>
+        <th>Last Run</th>
+        <th>Active</th>
+        <th>Alias</th>
+        <th>Security Level</th>
+        <th>Created</th>
+        <th>Updated</th>
+        <th>Published</th>
+        <th>Scheduled</th>
+        <th>Locked</th>
+        <th>Last Run Success</th>
+        <th>Last Run Fail</th>
+        <th>Blob Hash</th>
+        <th>Type</th>
+        <th>Channel Key</th>
+        <th>Channel Version</th>
+        <th>Channel Method</th>
+        <th>Edited</th>
+        <th>Rust</th>
+        <th>Template Name</th>
+        <th>Role Type</th>
+        <!--<th>Display</th>
+        <th>OAuth 2.0 Apps</th>-->
         <th>Privileges</th>
       </tr>
     </thead>
@@ -194,7 +282,7 @@
       <!-- Dynamic rows will be inserted here -->
     </tbody>
   </table>
-    </script>
+  </script>
   <script src="popup.js"></script>
 </body>
 
