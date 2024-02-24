@@ -1,3 +1,5 @@
+
+chrome.action.disable();
 // Define storage utility functions globally
 function setLocalStorageKey(key, value) {
   chrome.storage.local.set({ [key]: value }, function() {
@@ -19,6 +21,7 @@ chrome.runtime.onConnect.addListener(function(port) {
     console.log(JSON.stringify(workflowsdata));
     // Save the data to local storage
     setLocalStorageKey("workflowsdata", workflowsdata);
+    chrome.action.enable();
   });
 });
 
