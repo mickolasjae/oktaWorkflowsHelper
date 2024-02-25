@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const tierCell = document.createElement("td");
         tierCell.textContent = response.plan.tier;
         row.appendChild(tierCell);
+
         // Append the row to the table body
         PlansTableBody.appendChild(row);
         const FeaturesTable = document
@@ -193,61 +194,65 @@ document.addEventListener("DOMContentLoaded", function () {
         flowsTableBody.innerHTML = ""; // Clear existing rows
 
         response.flows.forEach((flow) => {
-          const row = document.createElement("tr");
-
-          // Function to add cell to the row
-          const addCell = (content) => {
-            
+          // console.log(flow.id)
+          const row = document.createElement("tr")
+          const addCell = (text) => {
             const cell = document.createElement("td");
-            if (typeof content === "object" && content !== null) {
-              // Simplify the display of objects for demonstration. Consider implementing a detailed display method.
-              cell.textContent = JSON.stringify(content);
-            } else {
-              cell.textContent = content ?? "N/A"; // Use 'N/A' for undefined or null values
-            }
+            cell.textContent = text || "N/A";
             row.appendChild(cell);
-          };
+          }
+    // Function to add a cell with a link
+    const addCellWithLink = (text, url) => {
+      const cell = document.createElement("td");
+      const link = document.createElement("a");
+      link.href = url;
+      link.textContent = text;
+      link.target = "_blank"; // Open link in a new tab
+      cell.appendChild(link);
+      row.appendChild(cell);
+  }
 
-          // List of keys to add cells for, directly from flow object
-          const keys = [
-            "id",
-            "org_id",
-            "group_id",
-            "user_id",
-            "name",
-            "uuid",
-            "description",
-            "client_token",
-            "execution_count",
-            "last_run",
-            "active",
-            "alias",
-            "security_level",
-            "created",
-            "updated",
-            "published",
-            "scheduled",
-            "locked",
-            "last_run_success",
-            "last_run_fail",
-            "blob_hash",
-            "type",
-            "channel_key",
-            "channel_version",
-            "channel_method",
-            "edited",
-            "rust",
-            "template_name",
-            "role_type",
-          ];
-
-          // Add cells for simple keys
-          keys.forEach((key) => addCell(flow[key]));
-        //add display column
+  // Add a cell with a link to the flow
+  addCellWithLink(flow.name, `https://${response.hostname}/app/folders/${flow.group_id}/flows/${flow.id}`);
 
 
-
-
+          //addCellWithLink(flow.name, "https://" + hostname + "/app/folders/" + flow.group_id + "/flows" + flow.id )
+          addCell(flow.id)
+          addCell(flow.org_id)
+          addCell(flow.group_id)
+          addCell(flow.user_id)
+          addCell(flow.uuid)
+          addCell(flow.description)
+          addCell(flow.client_token)
+          addCell(flow.execution_count)
+          addCell(flow.last_run)
+          addCell(flow.active)
+          addCell(flow.alias)
+          addCell(flow.security_level)
+          addCell(flow.created)
+          addCell(flow.updated)
+          addCell(flow.published)
+          addCell(flow.scheduled)
+          addCell(flow.locked)
+          addCell(flow.last_run_success)
+          addCell(flow.last_run_fail)
+          addCell(flow.blob_hash)
+          addCell(flow.type)
+          addCell(flow.channel_key)
+          addCell(flow.channel_version)
+          addCell(flow.channel_method)
+          addCell(flow.edited)
+          addCell(flow.rust)
+          addCell(flow.template_name)
+          addCell(flow.role_type)
+          if (flow.channel_key === "http") {
+            addCell("https://" + response.hostname + "/api/flow/" + flow.alias + "/invoke?clientToken=" + flow.client_token);
+          }
+          else{
+            addCell("n/a")
+          }
+         
+          //Priviliges Cell
           const flowPrivilegesCell = document.createElement("td")
           row.appendChild(flowPrivilegesCell);
           const btnP = document.createElement("button");
@@ -268,9 +273,103 @@ document.addEventListener("DOMContentLoaded", function () {
             contentDiv.style.display =
               contentDiv.style.display === "block" ? "none" : "block";
           };
-
-          flowsTableBody.appendChild(row);
+          flowsTableBody.appendChild(row)
         });
+          // const row = document.createElement("tr");
+          // document.getElementById("flow_id").innerText = "blah"
+          // const flow_id_cell = document.createElement("td");
+          // flow_id_cell.textContent = flow.id;
+          // row.appendChild(flow_id_cell);
+
+          
+          // List of keys to add cells for, directly from flow object
+          // const keys = [
+          //   "id",
+          //   "org_id",
+          //   "group_id",
+          //   "user_id",
+          //   "name",
+          //   "uuid",
+          //   "description",
+          //   "client_token",
+          //   "execution_count",
+          //   "last_run",
+          //   "active",
+          //   "alias",
+          //   "security_level",
+          //   "created",
+          //   "updated",
+          //   "published",
+          //   "scheduled",
+          //   "locked",
+          //   "last_run_success",
+          //   "last_run_fail",
+          //   "blob_hash",
+          //   "type",
+          //   "channel_key",
+          //   "channel_version",
+          //   "channel_method",
+          //   "edited",
+          //   "rust",
+          //   "template_name",
+          //   "role_type",
+          // ];
+
+
+
+          // keys.forEach((key) => {
+          //   document.getElementById("flow_id").innerText = flow[key];
+
+
+          //   console.log(flow[key]);
+            
+
+          //   if (flow[key] === "http"){
+          //     console.log("https://" + response.hostname + "/api/flow/" + flow.alias + "/invoke?clientToken=" + flow.client_token)
+          //   }
+
+          // })
+          
+          
+          // Add cells for simple keys
+          // keys.forEach((key) => addCell(flow[key]));
+        //add each cell
+        // keys.forEach((key) => {
+        //   document.getElementById("flow_id").innerText = flow[key];
+        //   const flow_id_cell = document.createElement("td");
+        //   flow_id_cell.textContent = flow[key];
+        //   row.appendChild(flow_id_cell);
+        // })
+          
+        
+       
+
+
+
+
+          // const flowPrivilegesCell = document.createElement("td")
+          // row.appendChild(flowPrivilegesCell);
+          // const btnP = document.createElement("button");
+          // btnP.textContent = "Show Privileges";
+          // btnP.className = "collapsible";
+          // const contentDiv = document.createElement("div");
+          // contentDiv.className = "content";
+          // contentDiv.innerHTML = flow.privileges
+          //   .map((flow) => `${flow.resource}: ${flow.privilege}`)
+          //   .join(", ");
+          //   flowPrivilegesCell.appendChild(btnP);
+          //   flowPrivilegesCell.appendChild(contentDiv);
+          //   btnP.onclick = function () {
+          //   this.textContent =
+          //     contentDiv.style.display === "block"
+          //       ? "Show Privileges"
+          //       : "Hide Privileges";
+          //   contentDiv.style.display =
+          //     contentDiv.style.display === "block" ? "none" : "block";
+          // };
+
+          // flowsTableBody.appendChild(row);
+        // });
 
         const tables = [
           { id: "OrgDetailsTable", label: "Org Details" },

@@ -27,13 +27,15 @@
     "https://ooo.workflows.oktapreview.com/*",
     "https://mickolas.workflows.okta.com/*",
     "https://*/*"
+
   ],
   "permissions": [
     "cookies",
     "tabs",
     "storage",
     "declarativeContent",
-    "activeTab"
+    "activeTab",
+    "webRequest"
   ]
 
   }
