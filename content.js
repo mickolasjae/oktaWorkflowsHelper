@@ -26,6 +26,8 @@ try {
         let oktaEnvironment = hostnameParts.includes("oktapreview") ? "oktapreview" : "okta";
         const generatedUrl = `https://${oktaSubdomain}.workflows.${oktaEnvironment}.com`;
 
+
+
         
         async function getGroups(url) {
             const response = await fetch(url)
@@ -34,7 +36,7 @@ try {
             }
             return await response.json()}
         var groups = await getGroups(generatedUrl+"/app/api/group?org_id="+orgId)
-        console.log(groups)
+        // console.log(groups)
     
     
         // Collect all fetch promises in an array
@@ -42,13 +44,40 @@ try {
             let groupUrl = generatedUrl + "/app/api/flo?org_id=" + orgId + "&group_id=" + group.id;
             return fetch(groupUrl).then(response => response.json());
         });
+
+        //https://ooo.workflows.oktapreview.com/app/api/flo/248480
+        // Collect all fetch promises in an array
+        // let fetchFlowPromises = groups.map(group => {
+        //     let flowgroupUrl = generatedUrl + "/app/api/publisher/flo/" + group.id;
+        //     return fetch(flowgroupUrl).then(response => response.json());
+        // });
     
         // Await all fetch operations
         let flowsResults = await Promise.all(fetchPromises);
+        
 
         // Assuming each fetch operation returns an array of flows, 
         // and you want to concatenate all these arrays.
         let allFlows = flowsResults.flat(); // Use .flat() if you expect nested arrays and want to flatten them
+
+        //const allFlows = await fetchAllFlows(); // Example function to fetch all flows
+
+        var flowIds = []
+        allFlows.forEach(flow => {
+            flowIds.push(flow.id)
+        })
+        // console.log(flowIds)
+
+        let fetchFlowPromises = flowIds.map(flowId => {
+            let flowUrl = generatedUrl + "/app/api/publisher/flo/" + flowId;
+            return fetch(flowUrl).then(response => response.json());
+          });
+
+        let flowDetailedResults = await Promise.all(fetchFlowPromises);
+        let allFlowDetailedResults = flowDetailedResults.flat()
+        // console.log(allFlowDetailedResults)
+
+
         
         var text = {
             id: res.id,
@@ -64,7 +93,8 @@ try {
             privileges: [...res.privileges],
             groups: [...groups],
             projects: [...res.projects],
-            flows: [...allFlows] // This now includes flows from all fetch responses
+            flows: [...allFlows],
+            detailedFlows: [...flowDetailedResults]
         };
 
         return text; // Return the constructed object

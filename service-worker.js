@@ -27,6 +27,7 @@ chrome.runtime.onConnect.addListener(function(port) {
 getLocalStorageKeyValue("workflowsdata", function(data) {
   if (data) {
     console.log("Retrieved workflowsdata:", data);
+
     // Use the workflowsdata as needed
   } else {
     console.log("No workflowsdata found");
