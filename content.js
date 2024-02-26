@@ -16,22 +16,33 @@ function extractOktaInfo(url) {
 }
 
 async function processResponse(res) {
-    var orgId = res.id;
-    var groups = res.groups;
-    var url = document.documentURI;
-    const parsedUrl = new URL(url);
-    const hostnameParts = parsedUrl.hostname.split(".");
-    let oktaSubdomain = hostnameParts.length > 2 ? hostnameParts[0] : null;
-    let oktaEnvironment = hostnameParts.includes("oktapreview") ? "oktapreview" : "okta";
-    const generatedUrl = `https://${oktaSubdomain}.workflows.${oktaEnvironment}.com`;
+try {
+        var orgId = res.id;
+        //var groups = res.groups;
+        var url = document.documentURI;
+        const parsedUrl = new URL(url);
+        const hostnameParts = parsedUrl.hostname.split(".");
+        let oktaSubdomain = hostnameParts.length > 2 ? hostnameParts[0] : null;
+        let oktaEnvironment = hostnameParts.includes("oktapreview") ? "oktapreview" : "okta";
+        const generatedUrl = `https://${oktaSubdomain}.workflows.${oktaEnvironment}.com`;
 
-    // Collect all fetch promises in an array
-    let fetchPromises = groups.map(group => {
-        let groupUrl = generatedUrl + "/app/api/flo?org_id=" + orgId + "&group_id=" + group.id;
-        return fetch(groupUrl).then(response => response.json());
-    });
-
-    try {
+        
+        async function getGroups(url) {
+            const response = await fetch(url)
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`)
+            }
+            return await response.json()}
+        var groups = await getGroups(generatedUrl+"/app/api/group?org_id="+orgId)
+        console.log(groups)
+    
+    
+        // Collect all fetch promises in an array
+        let fetchPromises = groups.map(group => {
+            let groupUrl = generatedUrl + "/app/api/flo?org_id=" + orgId + "&group_id=" + group.id;
+            return fetch(groupUrl).then(response => response.json());
+        });
+    
         // Await all fetch operations
         let flowsResults = await Promise.all(fetchPromises);
 
@@ -51,7 +62,7 @@ async function processResponse(res) {
             features: [...res.features],
             userAgreements: [...res.userAgreements],
             privileges: [...res.privileges],
-            groups: [...res.groups],
+            groups: [...groups],
             projects: [...res.projects],
             flows: [...allFlows] // This now includes flows from all fetch responses
         };
@@ -62,6 +73,7 @@ async function processResponse(res) {
         return null; // Or handle the error as appropriate
     }
 }
+
 
 async function fetchDataFromUrl(url) {
     const response = await fetch(url+"/app/api/org")
