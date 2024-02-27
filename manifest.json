@@ -16,8 +16,7 @@
       "js": ["content.js"],
       "matches": [
         
-        "https://ooo.workflows.oktapreview.com/*",
-        "https://mickolas.workflows.okta.com/*",
+       
         "https://*.workflows.okta.com/*",
         "https://*.workflows.oktapreview.com.com/*",
         "https://*.workflows.trexcloud.com/*"
@@ -26,8 +25,7 @@
   ],
   "host_permissions": [
     
-    "https://ooo.workflows.oktapreview.com/*",
-    "https://mickolas.workflows.okta.com/*",
+    
     "https://*.workflows.okta.com/*",
     "https://*.workflows.oktapreview.com.com/*",
     "https://*.workflows.trexcloud.com/*"
