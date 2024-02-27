@@ -180,10 +180,17 @@ $('#ConnectedFlowsTable').DataTable({
 
   // Initialize the DataTable with flowColumns and allFlowData
   const flowTable = new DataTable('#FlowsTable', {
+    
     lengthMenu: [
       [10, 25, 50, -1],
       [10, 25, 50, 'All']
     ],
+    layout: {
+      topStart: {
+          buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+      }
+  },
+
     colReorder: true,
     columns: reorderedColumns,
     data: allFlowData,
