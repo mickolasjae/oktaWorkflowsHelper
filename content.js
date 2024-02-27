@@ -45,15 +45,20 @@ try {
             return fetch(groupUrl).then(response => response.json());
         });
 
-        //https://ooo.workflows.oktapreview.com/app/api/flo/248480
-        // Collect all fetch promises in an array
-        // let fetchFlowPromises = groups.map(group => {
-        //     let flowgroupUrl = generatedUrl + "/app/api/publisher/flo/" + group.id;
-        //     return fetch(flowgroupUrl).then(response => response.json());
-        // });
-    
-        // Await all fetch operations
+        async function getConnectors(url){
+            const response = await fetch(url)
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`)
+            }
+            return await response.json()
+        }
+        const connectors = await getConnectors(generatedUrl + "/app/api/org/channels")
+        console.log(connectors)
+
+
         let flowsResults = await Promise.all(fetchPromises);
+
+ 
         
 
         // Assuming each fetch operation returns an array of flows, 
@@ -74,12 +79,11 @@ try {
           });
 
         let flowDetailedResults = await Promise.all(fetchFlowPromises);
-        let allFlowDetailedResults = flowDetailedResults.flat()
         // console.log(allFlowDetailedResults)
-
+        
 
         
-        var text = {
+        var flows = {
             id: res.id,
             active: res.active,
             created: res.created,
@@ -87,17 +91,18 @@ try {
             hostname: res.hostname,
             externalid: res.externalid,
             namespace: res.namespace,
-            plan: { ...res.plan },
-            features: [...res.features],
-            userAgreements: [...res.userAgreements],
-            privileges: [...res.privileges],
+            // plan: { ...res.plan },
+            // features: [...res.features],
+            // userAgreements: [...res.userAgreements],
+            // privileges: [...res.privileges],
             groups: [...groups],
             projects: [...res.projects],
             flows: [...allFlows],
-            detailedFlows: [...flowDetailedResults]
+            detailedFlows: [...flowDetailedResults],
+            flowConnectors: [...connectors]
         };
 
-        return text; // Return the constructed object
+        return flows; // Return the constructed object
     } catch (error) {
         console.error("Error fetching data:", error);
         return null; // Or handle the error as appropriate
