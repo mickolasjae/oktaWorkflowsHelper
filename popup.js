@@ -148,7 +148,7 @@ $('#ConnectedFlowsTable').DataTable({
           return api_endpoint_url;
         case 'name':
           // Return a cell with a link for the flow name
-          const flowUrl = `https://${response.hostname}/app/folders/${flow.group_id}/flows${flow.id}`;
+          const flowUrl = `https://${response.hostname}/app/folders/${flow.group_id}/flows/${flow.id}`;
           return `<a href="${flowUrl}" target="_blank">${flow.name}</a>`;
         default:
           // For other columns, return the value as usual
