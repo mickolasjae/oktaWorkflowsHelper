@@ -15,18 +15,20 @@
     {
       "js": ["content.js"],
       "matches": [
-        "https://developer.chrome.com/docs/extensions/*",
-        "https://developer.chrome.com/docs/webstore/*",
         "https://ooo.workflows.oktapreview.com/*",
         "https://mickolas.workflows.okta.com/*",
-        "https://*/*"
+        "https://*.workflows.okta.com/*",
+        "https://*.workflows.oktapreview.com.com/*",
+        "https://*.workflows.trexcloud.com/*"
       ]
     }
   ],
   "host_permissions": [
     "https://ooo.workflows.oktapreview.com/*",
     "https://mickolas.workflows.okta.com/*",
-    "https://*/*"
+    "https://*.workflows.okta.com/*",
+    "https://*.workflows.oktapreview.com.com/*",
+    "https://*.workflows.trexcloud.com/*"
 
   ],
   "permissions": [

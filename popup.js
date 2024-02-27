@@ -41,8 +41,8 @@ function findMethodsContainingFloIds(listOfObjects, floIds) {
           // If found, add the method, the flo.id of the current object, and the matching floId to the list
           foundMethods.push({
             //method: method, // The method where the floId was found
-            parentFlow: obj.flo.id, // The flo.id of the current object
-            helperFlow: input.value.data // The specific floId from the list that was found in the input
+            parentId: obj.flo.id, // The flo.id of the current object
+            helperId: input.value.data // The specific floId from the list that was found in the input
           });
         }
       });
@@ -52,17 +52,48 @@ function findMethodsContainingFloIds(listOfObjects, floIds) {
   return foundMethods;
 }
 
-const methodsContainingFloIds = findMethodsContainingFloIds(listOfObjects, floIds);
-console.log(methodsContainingFloIds);
+const connectedFlows = findMethodsContainingFloIds(listOfObjects, floIds);
+console.log(connectedFlows);
 
-  // Mapping of parentFlow IDs to their helper flows' IDs
-  const helperFlowsMapping = methodsContainingFloIds.reduce((acc, {parentFlow, helperFlow}) => {
-    if (!acc[parentFlow]) {
-      acc[parentFlow] = [];
-    }
-    acc[parentFlow].push(helperFlow);
-    return acc;
-  }, {});
+
+// Initialize an empty array to hold the data for DataTable
+let dataTableRows = [];
+
+// Loop through each connectedFlow to populate the dataTableRows
+connectedFlows.forEach(connectedFlow => {
+  // Find parent flow details
+  let parentFlow = response.flows.find(flow => flow.id === connectedFlow.parentId);
+  let parentFlowName = parentFlow ? parentFlow.name : 'Unknown Parent Flow';
+
+  // Find helper flow details
+  let helperFlow = response.flows.find(flow => flow.id === connectedFlow.helperId);
+  let helperFlowName = helperFlow ? helperFlow.name : 'Unknown Helper Flow';
+
+  // Create a separate row entry for each helper
+  dataTableRows.push({
+    parentId: connectedFlow.parentId,
+    parentName: parentFlowName,
+    helperId: connectedFlow.helperId,
+    helperName: helperFlowName
+  });
+});
+
+// Initialize or update the DataTable with the new rows
+$('#ConnectedFlowsTable').DataTable({
+  data: dataTableRows,
+  columns: [
+      { data: 'parentId', title: 'Parent ID' },
+      { data: 'parentName', title: 'Parent Name' },
+      { data: 'helperId', title: 'Helper ID' },
+      { data: 'helperName', title: 'Helper Name' }
+  ],
+  destroy: true // Use destroy option if updating an existing table
+});
+
+
+
+
+
 
 
   const flowColumns = [];
@@ -79,8 +110,11 @@ console.log(methodsContainingFloIds);
 
   const api_endpoint_url = "api_endpoint_url";
   flowColumns.push({title: api_endpoint_url});
-  const helper_flows = "helper_flows";
-  flowColumns.push({title: helper_flows});
+  const helper_id = "helper_id"
+  const helper_name = "helper_name"
+  flowColumns.push({title: helper_id});
+  flowColumns.push({title: helper_name});
+
 
   // Reorder the columns to have 'name' as the first column and 'description' as the second
   const reorderedColumns = [flowColumns.find(column => column.title === 'name')];
@@ -116,8 +150,6 @@ console.log(methodsContainingFloIds);
           // Return a cell with a link for the flow name
           const flowUrl = `https://${response.hostname}/app/folders/${flow.group_id}/flows${flow.id}`;
           return `<a href="${flowUrl}" target="_blank">${flow.name}</a>`;
-        case 'helper_flows':
-          return helper_flows
         default:
           // For other columns, return the value as usual
           return flow[key] || "N/A";
