@@ -15,20 +15,19 @@
     {
       "js": ["content.js"],
       "matches": [
-        
-       
-        "https://*.workflows.okta.com/*",
-        "https://*.workflows.oktapreview.com.com/*",
-        "https://*.workflows.trexcloud.com/*"
+        "https://*.oktapreview.com/*",
+        "https://*.okta.com/*",
+        "https://*.oktapreview.com.com/*",
+        "https://*.trexcloud.com/*"
       ]
     }
   ],
   "host_permissions": [
     
     
-    "https://*.workflows.okta.com/*",
-    "https://*.workflows.oktapreview.com.com/*",
-    "https://*.workflows.trexcloud.com/*"
+    "https://*.okta.com/*",
+    "https://*.oktapreview.com.com/*",
+    "https://*.trexcloud.com/*"
 
   ],
   "permissions": [
@@ -37,7 +36,9 @@
     "storage",
     "declarativeContent",
     "activeTab",
-    "webRequest"
+    "webRequest",
+    "unlimitedStorage",
+    "background","downloads"
   ]
 
   }

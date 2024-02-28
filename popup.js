@@ -4,6 +4,7 @@ function getLocalStorageKeyValue(key, callback) {
   });
 }
 
+
 document.addEventListener("DOMContentLoaded", function () {
   getLocalStorageKeyValue("workflowsdata", function(data) {
     if (data) {
@@ -15,7 +16,14 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
+
 function populateDOM(response) {
+//   const download = chrome.downloads.download({
+//   filename: "test.flow",
+//   url: "https://ooo.workflows.oktapreview.com/app/api/publisher/flopack/export?orgId=167&floId=284172"
+//  })
+
 
   // Create a button element for popping out the extension
   const popOutButton = document.createElement('button');
@@ -29,6 +37,11 @@ function populateDOM(response) {
       height: 1080, // Adjust window height as needed
     });
   });
+
+  // const orgDetails = new DataTable('#OrgTable', 
+  // data = ["test"],
+  // columns = [{title: "Org"}]
+  // )
 
 
 
@@ -66,7 +79,8 @@ function processJsonObjects(jsonObjects, hostname) {
       display: displayStr,
       oAuth2AppsCount: oauthAppsCount,
       privileges: privilegesStr,
-      api_endpoint_url: apiEndpointUrl
+      api_endpoint_url: apiEndpointUrl,
+      download_flow: ""
     };
   });
 }
@@ -85,56 +99,48 @@ const processedJson = processJsonObjects(response.flows, hostname);
   });
 
   const flowRows= processedJson.map(obj => Object.values(obj));
-console.log(flowColumns)
-console.log(flowRows);
-  // Initialize the DataTable with flowColumns and allFlowData
-  const flowTable = new DataTable('#FlowsTable', {
+  const flowTable = new DataTable('#FlowsTable', 
+  {
     columns: flowColumns,
     data: flowRows,
+    columnDefs: [
+        {
+            data: null,
+            defaultContent: '<button>Download Flow</button>',
+            targets: -1
+        }
+    ],
     paging: true, // Ensure paging is enabled
     lengthMenu: [
       [10, 25, 50, -1],
       [10, 25, 50, 'All']
     ],
-    // layout: {
-      // topStart: {
-      //     buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
-  //     // }
-  // },
-  layout: {
-    // top2Start: 'pageLength',
-    top2End: {buttons: ['copy', 'csv', 'excel', 'pdf', 'print']},
+    layout: {
+    top2Start: {buttons: ['copy', 'csv']},
     topStart: 'search',
-    topEnd: 'pageLength',
-    // bottomStart: 'info',
-    // bottomEnd: 'search',
-    // bottom2Start: 'info',
-    // bottom2End: 'paging'
+    topEnd: 'pageLength'
   },
-  stateSave: true
-    
-
-    
-  });
-  
- 
-document.querySelectorAll('a.toggle-vis').forEach((el) => {
-    el.addEventListener('click', function (e) {
-        e.preventDefault();
- 
-        let columnIdx = e.target.getAttribute('data-column');
-        let column = flowTable.column(columnIdx);
- 
-        // Toggle the visibility
-        column.visible(!column.visible());
-    });
-});
-
-//////end Flows Table
+  stateSave: true,
+  fixedHeader: true,
+  colReorder: true,
+    }
+    );
 
 
+    flowTable.on('click', 'button', function (e) {
+      let data = flowTable.row(e.target.closest('tr')).data();
 
+      //   const download = chrome.downloads.download({
+//   filename: "test.flow",
+    const url = "https://" + response.hostname + "/app/api/publisher/flopack/export?orgId=" + response.id + "&floId=" + data[13]
+//  })
+      chrome.downloads.download({
+        filename: data[13] + ".flow",
+        url: url
+      })
 
+      
+  })
 
 
 
@@ -199,7 +205,7 @@ connectedFlows.forEach(connectedFlow => {
   });
 });
 dataTableRows.sort()
-console.log(dataTableRows)
+//console.log(dataTableRows)
 
 // Initialize or update the DataTable with the new rows
 $('#ConnectedFlowsTable').DataTable({
@@ -210,39 +216,10 @@ $('#ConnectedFlowsTable').DataTable({
       { data: 'helperId', title: 'Helper ID' },
       { data: 'helperName', title: 'Helper Name' }
   ],
-  stateSave: true
+  stateSave: true,
+  fixedHeader: true,
+  colReorder: true,
 });
-
-// // Create DataTable
-
- 
-// // Create chart
-// const chart = Highcharts.chart('demo-output', {
-//     chart: {
-//         type: 'pie',
-//         styledMode: true
-//     },
-//     title: {
-//         text: 'Staff Count Per Position'
-//     },
-//     series: [
-//         {
-//             data: chartData(flowTable)
-//         }
-//     ]
-// });
-// // On each draw, update the data in the chart
-// flowTable.on('draw', function () {
-//   chart.series[0].setData(chartData(table));
-// });
-
-
-
-
-
-
-
-
 
 
 let connectorColumns = []
@@ -272,7 +249,7 @@ let connectorColumns = []
   connectorColumns.push({title:"recurrence"})
   connectorColumns.push({title:"supportemail"})
 
-console.log(connectorColumns)
+//console.log(connectorColumns)
 
 let connectorRows = [];
 
@@ -306,118 +283,47 @@ if (response.flowConnectors && response.flowConnectors.length > 0) {
     console.log("response.flowConnectors is empty or undefined");
 }
 
-console.log(connectorRows);
+//console.log(connectorRows);
 
 const connectorTable = new DataTable('#ConnectorsTable', {
   data: connectorRows,
   columns: connectorColumns,
-  stateSave: true
+  stateSave: true,
+  fixedHeader: true,
+  colReorder: true,
 })
-  
 
 
-
-
-
-
-//   const flowColumns = [];
-
-  
-//   // Loop through the keys of the first flow object to generate column titles
-//   Object.keys(response.flows[0]).forEach(key => {
-//     if(key==='oAuth2Apps' || key==='display' || key==='privileges'){
-//       flowColumns.push({ title: key, visible: false });
-//     } else {
-//       flowColumns.push({ title: key });
-//     }
-//   });
-
-//   const api_endpoint_url = "api_endpoint_url";
-//   flowColumns.push({title: api_endpoint_url});
-//   const helper_id = "helper_id"
-//   const helper_name = "helper_name"
-//   flowColumns.push({title: helper_id});
-//   flowColumns.push({title: helper_name});
-
-
-//   // Reorder the columns to have 'name' as the first column and 'description' as the second
-//   const reorderedColumns = [flowColumns.find(column => column.title === 'name')];
-//   const descriptionColumn = flowColumns.find(column => column.title === 'description');
-//   if (descriptionColumn) {
-//     reorderedColumns.push(descriptionColumn);
-//   }
-//   flowColumns.forEach(column => {
-//     if (column.title !== 'name' && column.title !== 'description') {
-//       reorderedColumns.push(column);
-//     }
-//   });
-
-//   const allFlowData = [];
-//   response.flows.forEach(flow => {
-
-
-
-
-
-//     let api_endpoint_url = "";
-//     if (flow.channel_key === "http") {
-//       api_endpoint_url = `https://${response.hostname}/api/flow/${flow.alias}/invoke?clientToken=${flow.client_token}`;
-//     }
-//     // Map the flow data to match the column order
-//     const rowData = reorderedColumns.map(column => {
-//       const key = column.title;
-//       switch (key) {
-//         case 'api_endpoint_url':
-//           // Return a cell with a link
-//           return api_endpoint_url;
-//         case 'name':
-//           // Return a cell with a link for the flow name
-//           const flowUrl = `https://${response.hostname}/app/folders/${flow.group_id}/flows/${flow.id}`;
-//           return `<a href="${flowUrl}" target="_blank">${flow.name}</a>`;
-//         default:
-//           // For other columns, return the value as usual
-//           return flow[key] || "N/A";
-//       }
-//     });
-//     allFlowData.push(rowData);
-//   });
-
-  
-
-//   // Create a button element for popping out the extension
-//   const popOutButton = document.createElement('button');
-//   popOutButton.textContent = 'Pop Out';
-//   popOutButton.addEventListener('click', function() {
-//     chrome.windows.create({
-//       url: chrome.runtime.getURL('popup.html'),
-//       type: 'popup',
-//       width: 800, // Adjust window width as needed
-//       height: 600, // Adjust window height as needed
-//     });
-//   });
-
-
-
-//   // Append the button before the DataTable
-//   const flowsTable = document.querySelector('#FlowsTable');
-//   flowsTable.parentElement.insertBefore(popOutButton, flowsTable);
-
-  // // Initialize the DataTable with flowColumns and allFlowData
-  // const flowTable = new DataTable('#FlowsTable', {
+  groupColumns = []
+  // Loop through the keys of the first flow object to generate column titles
+  Object.keys(response.groups[0]).forEach(key => {
+    if(key==='privileges'){
+      groupColumns.push({ title: key, visible: false });
+    } else {
+      groupColumns.push({ title: key });
+    }
+  });
+  console.log(groupColumns)
+  const groupRows= response.groups.map(obj => Object.values(obj));
+  console.log(groupRows)
+  const groupsTable = new DataTable('#GroupsTable', {
+    data: groupRows,
+    columns: groupColumns,
+    stateSave: true,
+    fixedHeader: true,
+    colReorder: true,
     
-  //   lengthMenu: [
-  //     [10, 25, 50, -1],
-  //     [10, 25, 50, 'All']
-  //   ],
-  //   layout: {
-  //     topStart: {
-  //         buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
-  //     }
-  // },
+  })
 
-  //   colReorder: true,
-  //   columns: reorderedColumns,
-  //   data: allFlowData,
-  //   paging: true, // Ensure paging is enabled
-  // });
+
+
+
+
+
+
+
+
+
+
+
 }
