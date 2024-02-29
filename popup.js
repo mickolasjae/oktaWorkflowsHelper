@@ -19,10 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 function populateDOM(response) {
-//   const download = chrome.downloads.download({
-//   filename: "test.flow",
-//   url: "https://ooo.workflows.oktapreview.com/app/api/publisher/flopack/export?orgId=167&floId=284172"
-//  })
 
 
   // Create a button element for popping out the extension
@@ -37,12 +33,6 @@ function populateDOM(response) {
       height: 1080, // Adjust window height as needed
     });
   });
-
-  // const orgDetails = new DataTable('#OrgTable', 
-  // data = ["test"],
-  // columns = [{title: "Org"}]
-  // )
-
 
 
   // Append the button before the DataTable
@@ -91,7 +81,8 @@ const processedJson = processJsonObjects(response.flows, hostname);
   flowColumns = []
   // Loop through the keys of the first flow object to generate column titles
   Object.keys(processedJson[0]).forEach(key => {
-    if(key==='oAuth2Apps' || key==='display' || key==='privileges'){
+    if(key==='oAuth2Apps' || key==='display' || key==='privileges' || key==='blob_hash' || key==='execution_count'
+    || key==='last_run_success' || key==='last_run_fail'){
       flowColumns.push({ title: key, visible: false });
     } else {
       flowColumns.push({ title: key });
