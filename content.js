@@ -45,39 +45,39 @@ try {
             return fetch(groupUrl).then(response => response.json());
         });
 
-        async function getConnectors(url){
-            const response = await fetch(url)
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`)
-            }
-            return await response.json()
-        }
-        const connectors = await getConnectors(generatedUrl + "/app/api/org/channels")
-        //console.log(connectors)
+        // async function getConnectors(url){
+        //     const response = await fetch(url)
+        //     if (!response.ok) {
+        //         throw new Error(`HTTP error! Status: ${response.status}`)
+        //     }
+        //     return await response.json()
+        // }
+        // const connectors = await getConnectors(generatedUrl + "/app/api/org/channels")
+        // //console.log(connectors)
 
-        // Collect all stash promises in an array
-        let stashesPromises = groups.map(group => {
-            let stashesUrl = generatedUrl + "/app/api/stash?orgId=" + orgId + "&groupId=" + group.id;
-            return fetch(stashesUrl).then(response => response.json());
-        });
-        let stashes = await Promise.all(stashesPromises)
-        let actualStashes = []
-        var stashesIds = []
-        let processedStashes = stashes.forEach(stash => {
-            const newStash = stash.forEach(table => {
-                actualStashes.push(table)
-                stashesIds.push(table.stashId)
+        // // Collect all stash promises in an array
+        // let stashesPromises = groups.map(group => {
+        //     let stashesUrl = generatedUrl + "/app/api/stash?orgId=" + orgId + "&groupId=" + group.id;
+        //     return fetch(stashesUrl).then(response => response.json());
+        // });
+        // let stashes = await Promise.all(stashesPromises)
+        // let actualStashes = []
+        // var stashesIds = []
+        // let processedStashes = stashes.forEach(stash => {
+        //     const newStash = stash.forEach(table => {
+        //         actualStashes.push(table)
+        //         stashesIds.push(table.stashId)
                 
-            })
-        })
-        console.log(actualStashes)
-        console.log(stashesIds)
-        let fetchStashPromises = stashesIds.map(stashId => {
-            let stashUrl = generatedUrl + "/app/api/stash/" + stashId + "/row?orgId=" + orgId;
-            return fetch(stashUrl).then(response => response.json());
-          });
+        //     })
+        // })
+        // console.log(actualStashes)
+        // console.log(stashesIds)
+        // let fetchStashPromises = stashesIds.map(stashId => {
+        //     let stashUrl = generatedUrl + "/app/api/stash/" + stashId + "/row?orgId=" + orgId;
+        //     return fetch(stashUrl).then(response => response.json());
+        //   });
 
-          let stashDetails = await Promise.all(fetchStashPromises)
+        //   let stashDetails = await Promise.all(fetchStashPromises)
 
 
 
@@ -96,12 +96,10 @@ try {
         allFlows.forEach(flow => {
             flowIds.push(flow.id)
         })
-        // console.log(flowIds)
-        
-        // var stashesIds = []
-        stashes.forEach(stash => {
-            stashesIds.push(stash.stashId)
-            })
+
+        // stashes.forEach(stash => {
+        //     stashesIds.push(stash.stashId)
+        //     })
             
         
      
@@ -133,13 +131,13 @@ try {
             // features: [...res.features],
             // userAgreements: [...res.userAgreements],
             // privileges: [...res.privileges],
-            groups: [...groups],
-            projects: [...res.projects],
+            // groups: [...groups],
+            // projects: [...res.projects],
             flows: [...allFlows],
             detailedFlows: [...flowDetailedResults],
-            flowConnectors: [...connectors],
-            stashes: [...actualStashes],
-            stashDetails: [...stashDetails]
+            // flowConnectors: [...connectors],
+            // stashes: [...actualStashes],
+            // stashDetails: [...stashDetails]
         };
 
         return flows; // Return the constructed object

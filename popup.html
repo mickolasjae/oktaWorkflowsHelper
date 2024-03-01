@@ -126,6 +126,29 @@
     body {
       overflow: scroll;
     }
+    .dt-button-custom {
+      position: relative;
+      display: inline-block;
+      box-sizing: border-box;
+      margin-left: 0.167em;
+      margin-right: 0.167em;
+      margin-bottom: 0.333em;
+      padding: 0.5em 1em;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      border-radius: 2px;
+      cursor: pointer;
+      font-size: .88em;
+      line-height: 1.6em;
+      color: inherit;
+      white-space: nowrap;
+      overflow: hidden;
+      background-color: rgba(0, 0, 0, 0.1);
+      background: linear-gradient(to bottom, rgba(230, 230, 230, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
+      user-select: none;
+      text-decoration: none;
+      outline: none;
+      text-overflow: ellipsis;
+  }
   </style>
 </head>
 
@@ -133,28 +156,9 @@
   
   <h2>Okta Workflows Details</h2>
 
-  <table class="OrgTable" id="OrgTable"></table>
+ 
 
-  <table class="FlowsTable" id="FlowsTable">
-    <caption>All Flows</caption>
-    
-  </table>
-
-  <table class="ConnectedFlowsTable" id="ConnectedFlowsTable">
-    <caption>Connected Flows</caption>
-  </table>
-  <br>
-  <br>
-  <br>
-  <table class="ConnectorsTable" id="ConnectorsTable">
-    <caption>Connectors</caption>
-  </table>
-  <br>
-  <br>
-  <br>
-  <table class="GroupsTable" id="GroupsTable">
-    <caption>Groups</caption>
-  </table>
+<table class="NewflowsTable" id="NewflowsTable"></table>
 
 
   
