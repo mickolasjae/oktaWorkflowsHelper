@@ -16,9 +16,7 @@
       "js": ["content.js"],
       "matches": [
         "https://*.oktapreview.com/*",
-        "https://*.okta.com/*",
-        "https://*.oktapreview.com.com/*",
-        "https://*.trexcloud.com/*"
+        "https://*.okta.com/*"
       ]
     }
   ],
@@ -26,19 +24,13 @@
     
     
     "https://*.okta.com/*",
-    "https://*.oktapreview.com.com/*",
-    "https://*.trexcloud.com/*"
+    "https://*.oktapreview.com.com/*"
 
   ],
   "permissions": [
-    "cookies",
-    "tabs",
+    "background",
     "storage",
-    "declarativeContent",
-    "activeTab",
-    "webRequest",
-    "unlimitedStorage",
-    "background","downloads"
+    "downloads"
   ]
 
   }
