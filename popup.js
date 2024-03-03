@@ -47,6 +47,9 @@ function processJsonObjects(jsonObjects, hostname) {
     if (obj.channel_key === 'http') {
       apiEndpointUrl = `https://${hostname}/api/flow/${obj.alias}/invoke?clientToken=${obj.client_token}`;
     }
+    else {
+      apiEndpointUrl = "n/a"
+    }
     // Constructing the URL for the href
     const flowUrl = `https://${response.hostname}/app/folders/${obj.group_id}/flows/${obj.id}`; // Adjust the URL path as needed
     // Embedding the URL in an HTML anchor tag and appending to the name
@@ -58,8 +61,8 @@ function processJsonObjects(jsonObjects, hostname) {
       display: displayStr,
       oAuth2AppsCount: oauthAppsCount,
       privileges: privilegesStr,
-      // api_endpoint_url: apiEndpointUrl,
-      // download_flow: ""
+      api_endpoint_url: apiEndpointUrl,
+      download_flow: ""
     };
   });
 }
@@ -185,13 +188,9 @@ mergedArrays.forEach(merged => {
 
 newFlowColomns=[]
 Object.keys(mergedArrays[0]).forEach(key => {
-  if(key==='oAuth2Apps' || key==='display' || key==='privileges' || key==='blob_hash' || key==='execution_count' || key==='last_run_success' || key==='last_run_fail'){
-    // newFlowColomns.push({ title: key, visible: false });
     newFlowColomns.push({ title: key });
-  } else {
-    newFlowColomns.push({ title: key });
-  }
-})
+  })
+
 // console.log(newFlowColomns)
 const newFlowRows= mergedArrays.map(obj => Object.values(obj));
 // console.log(newFlowRows)
@@ -202,13 +201,13 @@ const newFlowTable = new DataTable('#NewflowsTable',
   {
     columns: newFlowColomns,
     data: newFlowRows,
-    // columnDefs: [
-    //     {
-    //         data: null,
-    //         defaultContent: '<button>Download Flow</button>',
-    //         targets: -1
-    //     }
-    // ],
+    columnDefs: [
+        {
+            data: null,
+            defaultContent: '<button>Download Flow</button>',
+            targets: -4
+        }
+    ],
     paging: true, // Ensure paging is enabled
     lengthMenu: [
       [10, 25, 50, -1],
@@ -224,45 +223,28 @@ const newFlowTable = new DataTable('#NewflowsTable',
   colReorder: true,
     },
 )
-// newFlowTable.on('click', 'button', function (e) {
-//   // let data = flowTable.row(e.target.closest('tr')).data();
-//   let data = this.columns() .every(function () {
-//     let column = this;
+newFlowTable.on('click', 'button', function (e) {
+    e.preventDefault(); // Prevent the default button action
 
-//     // Create select element
-//     let select = document.createElement('select');
-//     select.add(new Option(''));
-//     column.footer().replaceChildren(select);
+    let tr = $(this).closest('tr'); // Find the closest table row to the clicked button
+    let data = newFlowTable.row(tr).data(); // Use the DataTable API to get the data for the row
 
-//     // Apply listener for user change in value
-//     select.addEventListener('change', function () {
-//         column
-//             .search(select.value, {exact: true})
-//             .draw();
-//     });
+    // Assuming the "name" column is the one you're interested in and it contains HTML
+    let htmlContent = data[19];
+    let parser = new DOMParser();
+    let doc = parser.parseFromString(htmlContent, 'text/html');
+    let flowName = doc.body.textContent || ""; // Extract just the text content, stripping away any HTML tags
+    console.log(flowName)
 
-//     // Add list of options
-//     column
-//         .data()
-//         .unique()
-//         .sort()
-//         .each(function (d, j) {
-//             select.add(new Option(d));
-//         });
-// })
+    // Construct the download URL using the flow ID (adjust the index if the flow ID is at a different position)
+    const url = `https://${response.hostname}/app/api/publisher/flopack/export?orgId=${response.id}&floId=${data[13]}`;
 
-// //   //   const download = chrome.downloads.download({
-// // //   filename: "test.flow",
-// // const url = "https://" + response.hostname + "/app/api/publisher/flopack/export?orgId=" + response.id + "&floId=" + data[13]
-// // //  })
-// //   chrome.downloads.download({
-// //     filename: data[13] + ".flow",
-// //     url: url
-// //   })
-
-  
-// })
-
+    // Initiate the download, naming the file based on the flow's name extracted from the HTML content
+    chrome.downloads.download({
+        filename: `${flowName}.flow`,
+        url: url
+    });
+});
 
 }
 
