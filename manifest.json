@@ -1,12 +1,12 @@
 {
-    "name": "Okta Workflows Helper",
+    "name": "Flow Reporter",
     "description": "",
     "version": "1.0",
     "manifest_version": 3,
     "action": {
       "default_popup": "popup.html",
       "default_icon": "icon.png",
-      "default_title": "Okta Workflows Helper"
+      "default_title": "Flow Reporter"
     },
     "background":{
       "service_worker":"service-worker.js"
